@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+textarea,
+input,
+button {
+  outline: none;
+}
+
+textarea::-webkit-scrollbar {
+  width: 1rem;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  border: 0.3125rem solid transparent;
+  background-clip: padding-box;
+  border-radius: 1000rem;
+  background-color: #cfcfcf;
+}
