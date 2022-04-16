@@ -1,13 +1,15 @@
 import Head from 'next/head'
-import { Input, Radio } from '../components/Form'
+import { Input } from '../components/Form'
 import { useState } from 'react'
 import { RadioGroup } from '@headlessui/react'
+import { useRouter } from 'next/router'
 
 export default function home() {
+  const router = useRouter()
   const [age, setAge] = useState('22')
   const [sex, setSex] = useState('0')
   const [trestbps, setTrestBps] = useState('94')
-  const [cp, setCp] = useState('2')
+  const [cp, setCp] = useState('3')
   const [chol, setChol] = useState('')
   const [fbs, setFbs] = useState('0')
   const [restecg, setRestecg] = useState('0')
@@ -42,7 +44,30 @@ export default function home() {
       }),
     })
     const data = await res.json()
-    console.log(data)
+    const risk = data.risk
+    const prediction_probability = data.prediction_probability
+    router.push({
+      pathname: '/cardiac/result',
+      query: {
+        age,
+        sex,
+        trestbps,
+        cp,
+        chol,
+        fbs,
+        restecg,
+        thalach,
+        exang,
+        slope,
+        ca,
+        thal,
+        oldpeak,
+        risk,
+        prediction_probability
+      },
+    },
+    '/cardiac/result'
+    )
   }
 
   return (
@@ -61,13 +86,13 @@ export default function home() {
                 <Input type="number" min="0" onChange={(e) => setAge(e.target.value)} placeholder={"Your age relative to birth date"} className="px-4 h-10 border-gray-200 border-2 rounded-md w-full flex items-center" />
                 <Biologicalsex />
                 <Chestpain />
-                <Input type="number" min="0" onChange={(e) => setTrestBps(e.target.value)} placeholder={"Resting blood pressure (mm Hg)"} className="px-4 h-10 border-gray-200 border-2 rounded-md w-full flex items-center" />
+                <Input type="number" min="0" onChange={(e) => setTrestBps(e.target.value)} placeholder={"Resting blood pressure (Systolic in mm Hg)"} className="px-4 h-10 border-gray-200 border-2 rounded-md w-full flex items-center" />
                 <Input type="number" min="0" onChange={(e) => setChol(e.target.value)} placeholder={"Serum cholestoral (mg/dl)"} className="px-4 h-10 border-gray-200 border-2 rounded-md w-full flex items-center" />
                 <Bloodsugar />
                 <ECGresult />
                 <Input type="number" min="0" onChange={(e) => setThalach(e.target.value)} placeholder={"Maximum heart rate achieved (BPM)"} className="px-4 h-10 border-gray-200 border-2 rounded-md w-full flex items-center" />
                 <Exangexercise />
-                <Input type="number" step="any" min="0" max="10" onChange={(e) => setOldpeak(e.target.value)} placeholder={"Excersing ST depression (mm Hg)"} className="px-4 h-10 border-gray-200 border-2 rounded-md w-full flex items-center" />
+                <Input type="number" step="any" min="-2.6" max="10" onChange={(e) => setOldpeak(e.target.value)} placeholder={"Excersing ST depression (mm Hg)"} className="px-4 h-10 border-gray-200 border-2 rounded-md w-full flex items-center" />
                 <Anginaslope />
                 <Coloredvessel />
                 <Thalassemia />
