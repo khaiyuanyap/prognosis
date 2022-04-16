@@ -18,6 +18,33 @@ export default function home() {
   const [thal, setThal] = useState('0')
   const [oldpeak, setOldpeak] = useState('0')
 
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const res = await fetch('/api/cardiac', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        'age': age,
+        'sex': sex,
+        'trestbps': trestbps,
+        'cp': cp,
+        'chol': chol,
+        'fbs': fbs,
+        'restecg': restecg,
+        'thalach': thalach,
+        'exang': exang,
+        'slope': slope,
+        'ca': ca,
+        'thal': thal,
+        'oldpeak': oldpeak
+      }),
+    })
+    const data = await res.json()
+    console.log(data)
+  }
+
   return (
     <div>
       <Head>
@@ -29,7 +56,7 @@ export default function home() {
         <div className="relative flex min-h-screen flex-col justify-center bg-gray-50 py-6 sm:py-12">
           <div className="relative px-6 pt-10 pb-10">
             <div className="mx-auto max-w-lg">
-              <form className="space-y-4">
+              <form className="space-y-4" onSubmit={(e) => handleSubmit(e)} method="post">
                 <label className="font-semibold text-lg">All fields must be filled in without units</label>
                 <Input type="number" min="0" onChange={(e) => setAge(e.target.value)} placeholder={"Your age relative to birth date"} className="px-4 h-10 border-gray-200 border-2 rounded-md w-full flex items-center" />
                 <Biologicalsex />
@@ -38,12 +65,13 @@ export default function home() {
                 <Input type="number" min="0" onChange={(e) => setChol(e.target.value)} placeholder={"Serum cholestoral (mg/dl)"} className="px-4 h-10 border-gray-200 border-2 rounded-md w-full flex items-center" />
                 <Bloodsugar />
                 <ECGresult />
-                <Input type="number" min="0" onChange={(e) => setThalach(e.target.value)} placeholder={"Excersing ST depression (mm Hg)"} className="px-4 h-10 border-gray-200 border-2 rounded-md w-full flex items-center" />
+                <Input type="number" min="0" onChange={(e) => setThalach(e.target.value)} placeholder={"Maximum heart rate achieved (BPM)"} className="px-4 h-10 border-gray-200 border-2 rounded-md w-full flex items-center" />
                 <Exangexercise />
-                <Input type="number" min="0" max="10" onChange={(e) => setOldpeak(e.target.value)} placeholder={"Maximum heart rate achieved (BPM)"} className="px-4 h-10 border-gray-200 border-2 rounded-md w-full flex items-center" />
+                <Input type="number" step="any" min="0" max="10" onChange={(e) => setOldpeak(e.target.value)} placeholder={"Excersing ST depression (mm Hg)"} className="px-4 h-10 border-gray-200 border-2 rounded-md w-full flex items-center" />
                 <Anginaslope />
                 <Coloredvessel />
                 <Thalassemia />
+                <button type="submit" className="px-3 py-1 rounded-md font-semibold border-2 tracking-wide border-green-500 hover:opacity-80 bg-white">Predict</button>
               </form>
             </div>
           </div>
