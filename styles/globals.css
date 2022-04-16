@@ -4,6 +4,7 @@
 
 textarea,
 input,
+div,
 button {
   outline: none;
 }
