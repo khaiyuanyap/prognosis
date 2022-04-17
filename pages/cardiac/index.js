@@ -69,21 +69,28 @@ export default function home() {
         prediction_probability
       }
     },
-    `/cardiac/result/${name.toLowerCase()}`
+      `/cardiac/result/${name.toLowerCase()}`
     )
   }
 
   return (
     <div>
       <Head>
-        <title>Cardiac health checkup</title>
+        <title>Cardiac Health Checkup</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <div className="relative flex min-h-screen flex-col justify-center bg-gray-50 py-6 sm:py-12">
+      <main className="px-5 pt-5 bg-gray-50 min-h-screen">
+        <div >
+          <button onClick={() => router.push('/')} className="bg-white print:hidden font-semibold opacity-80 hover:opacity-60 ml-4 mb-4 text-sm rounded-lg px-2 py-1 border flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+            </svg>Go Back
+          </button>
+        </div>
+        <div className="relative flex min-h-screen flex-col justify-center bg-gray-50">
           <div className="relative px-6 pt-10 pb-10">
-            <div className="mx-auto max-w-lg">
+            <div className="md:mx-auto max-w-lg">
               <form className="space-y-4" onSubmit={(e) => handleSubmit(e)} method="post">
                 <label className="font-semibold text-lg">All fields must be filled in without units</label>
                 <Input type="text" pattern="^[A-Za-z ]+$" onChange={(e) => setName(e.target.value)} placeholder={"Please provide your name"} className="px-4 h-10 border-gray-200 border-2 rounded-md w-full flex items-center" />
@@ -111,37 +118,37 @@ export default function home() {
   )
 
   function Thalassemia() {
-    return <Radio name0="Normal" name1="Fixed defect" name2="Reversable defect" label="Thalassemia level" onChange={setThal} value={thal}/>
+    return <Radio name0="Normal" name1="Fixed defect" name2="Reversable defect" label="Thalassemia level" onChange={setThal} value={thal} />
 
   }
 
   function Coloredvessel() {
-    return <Radio name0="0" name1="1" name2="2" name3="3" label="Major vessels coloured by flourosopy" onChange={setCa} value={ca}/>
+    return <Radio name0="0" name1="1" name2="2" name3="3" label="Major vessels coloured by flourosopy" onChange={setCa} value={ca} />
 
   }
 
   function Anginaslope() {
-    return <Radio name0="Upsloping" name1="Flat" name2="Downsloping" label="Peak exercise electrocardiographic slope" onChange={setSlope} value={slope}/>
+    return <Radio name0="Upsloping" name1="Flat" name2="Downsloping" label="Peak exercise electrocardiographic slope" onChange={setSlope} value={slope} />
   }
 
   function Exangexercise() {
-    return <Radio name0="False" name1="True" label="Chest pain (angina) after exercise" onChange={setExang} value={exang}/>
+    return <Radio name0="False" name1="True" label="Chest pain (angina) after exercise" onChange={setExang} value={exang} />
   }
 
   function ECGresult() {
-    return <Radio name0="Normal" name1="ST-T wave abnormality" name2="Probable/definite ventricular hypertrophy" label="Resting electrocardiographic results" onChange={setRestecg} value={restecg}/>
+    return <Radio name0="Normal" name1="ST-T wave abnormality" name2="Probable/definite ventricular hypertrophy" label="Resting electrocardiographic results" onChange={setRestecg} value={restecg} />
   }
 
   function Bloodsugar() {
-    return <Radio name0="False" name1="True" label="Resting electrocardiographic results" onChange={setFbs} value={fbs}/>
+    return <Radio name0="False" name1="True" label="Fasting blood sugar > 120 mg/dl" onChange={setFbs} value={fbs} />
   }
 
   function Chestpain() {
-    return <Radio name0="Typical angina" name1="Atypical angina" name2="Non-anginal pain" name3="Asymptomatic" label="Chest pain type" onChange={setCp} value={cp}/>
+    return <Radio name0="Typical angina" name1="Atypical angina" name2="Non-anginal pain" name3="Asymptomatic" label="Chest pain type" onChange={setCp} value={cp} />
   }
 
   function Biologicalsex() {
-    return <Radio name0="Female" name1="Male" label="Chest pain type" onChange={setSex} value={sex}/>
+    return <Radio name0="Female" name1="Male" label="Chest pain type" onChange={setSex} value={sex} />
   }
 }
 

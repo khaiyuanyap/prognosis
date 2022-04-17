@@ -12,10 +12,10 @@ export default function result() {
     return (
         <div className="bg-gray-50 min-h-screen">
             <Head>
-                <title>Cardiac health report | {data.name}</title>
+                <title>Cardiac Health Report | {data.name}</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <div className="mx-5 py-5">
+            <main className="mx-5 py-5">
                 <button onClick={() => router.push('/cardiac')} className="bg-white print:hidden font-semibold opacity-80 hover:opacity-60 ml-4 mb-4 text-sm rounded-lg px-2 py-1 border flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
@@ -292,7 +292,7 @@ export default function result() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </main>
         </div>
     )
 }

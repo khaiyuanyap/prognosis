@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body, html {
+  background-color: #f9fafb
+}
+
 textarea,
 input,
 div,
