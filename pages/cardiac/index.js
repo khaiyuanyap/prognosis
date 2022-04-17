@@ -1,11 +1,12 @@
 import Head from 'next/head'
-import { Input } from '../components/Form'
+import { Input } from '../../components/Form'
 import { useState } from 'react'
 import { RadioGroup } from '@headlessui/react'
 import { useRouter } from 'next/router'
 
 export default function home() {
   const router = useRouter()
+  const [name, setName] = useState('')
   const [age, setAge] = useState('22')
   const [sex, setSex] = useState('0')
   const [trestbps, setTrestBps] = useState('94')
@@ -49,6 +50,7 @@ export default function home() {
     router.push({
       pathname: '/cardiac/result',
       query: {
+        name,
         age,
         sex,
         trestbps,
@@ -64,16 +66,16 @@ export default function home() {
         oldpeak,
         risk,
         prediction_probability
-      },
+      }
     },
-    '/cardiac/result'
+      // '/cardiac/result'
     )
   }
 
   return (
     <div>
       <Head>
-        <title>Create next app</title>
+        <title>Cardiac health checkup</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -83,16 +85,17 @@ export default function home() {
             <div className="mx-auto max-w-lg">
               <form className="space-y-4" onSubmit={(e) => handleSubmit(e)} method="post">
                 <label className="font-semibold text-lg">All fields must be filled in without units</label>
+                <Input type="text" pattern="^[A-Za-z ]+$" onChange={(e) => setName(e.target.value)} placeholder={"Please provide your name"} className="px-4 h-10 border-gray-200 border-2 rounded-md w-full flex items-center" />
                 <Input type="number" min="0" onChange={(e) => setAge(e.target.value)} placeholder={"Your age relative to birth date"} className="px-4 h-10 border-gray-200 border-2 rounded-md w-full flex items-center" />
                 <Biologicalsex />
                 <Chestpain />
-                <Input type="number" min="0" onChange={(e) => setTrestBps(e.target.value)} placeholder={"Resting blood pressure (Systolic in mm Hg)"} className="px-4 h-10 border-gray-200 border-2 rounded-md w-full flex items-center" />
+                <Input type="number" min="0" onChange={(e) => setTrestBps(e.target.value)} placeholder={"Resting blood pressure (mm Hg)"} className="px-4 h-10 border-gray-200 border-2 rounded-md w-full flex items-center" />
                 <Input type="number" min="0" onChange={(e) => setChol(e.target.value)} placeholder={"Serum cholestoral (mg/dl)"} className="px-4 h-10 border-gray-200 border-2 rounded-md w-full flex items-center" />
                 <Bloodsugar />
                 <ECGresult />
                 <Input type="number" min="0" onChange={(e) => setThalach(e.target.value)} placeholder={"Maximum heart rate achieved (BPM)"} className="px-4 h-10 border-gray-200 border-2 rounded-md w-full flex items-center" />
                 <Exangexercise />
-                <Input type="number" step="any" min="-2.6" max="10" onChange={(e) => setOldpeak(e.target.value)} placeholder={"Excersing ST depression (mm Hg)"} className="px-4 h-10 border-gray-200 border-2 rounded-md w-full flex items-center" />
+                <Input type="number" step="any" min="-2.6" max="10" onChange={(e) => setOldpeak(e.target.value)} placeholder={"Excersing ST depression"} className="px-4 h-10 border-gray-200 border-2 rounded-md w-full flex items-center" />
                 <Anginaslope />
                 <Coloredvessel />
                 <Thalassemia />
@@ -234,7 +237,7 @@ export default function home() {
 
   function Anginaslope() {
     return <RadioGroup value={slope} onChange={setSlope}>
-      <RadioGroup.Label className="font-semibold">Slope of peak exercise ST segment</RadioGroup.Label>
+      <RadioGroup.Label className="font-semibold">Peak exercise electrocardiographic slope</RadioGroup.Label>
       <RadioGroup.Option value="0">
         {({ checked }) => (
 
