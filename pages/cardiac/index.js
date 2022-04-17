@@ -3,6 +3,7 @@ import { Input } from '../../components/Form'
 import { useState } from 'react'
 import { RadioGroup } from '@headlessui/react'
 import { useRouter } from 'next/router'
+import Radio from '../../components/Radio'
 
 export default function home() {
   const router = useRouter()
@@ -110,433 +111,37 @@ export default function home() {
   )
 
   function Thalassemia() {
-    return <RadioGroup value={thal} onChange={setThal}>
-      <RadioGroup.Label className="font-semibold">Thalassemia level</RadioGroup.Label>
-      <RadioGroup.Option value="0">
-        {({ checked }) => (
+    return <Radio name0="Normal" name1="Fixed defect" name2="Reversable defect" label="Thalassemia level" onChange={setThal} value={thal}/>
 
-          <span className={checked ? 'text-sm text-gray-700 font-medium items-center flex cursor-pointer' : 'items-center flex cursor-pointer text-sm text-gray-400 font-medium font-cursor'}>
-            {checked ?
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              :
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <circle cx="12" cy="12" r="9" strokeWidth="2" />
-              </svg>}
-            Normal
-          </span>
-
-        )}
-      </RadioGroup.Option>
-      <RadioGroup.Option value="1">
-        {({ checked }) => (
-
-          <span className={checked ? 'text-sm text-gray-700 font-medium items-center flex cursor-pointer' : 'items-center flex cursor-pointer text-sm text-gray-400 font-medium font-cursor'}>
-            {checked ?
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              :
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <circle cx="12" cy="12" r="9" strokeWidth="2" />
-              </svg>}
-            Fixed defect
-          </span>
-        )}
-      </RadioGroup.Option>
-      <RadioGroup.Option value="2">
-        {({ checked }) => (
-
-          <span className={checked ? 'text-sm text-gray-700 font-medium items-center flex cursor-pointer' : 'items-center flex cursor-pointer text-sm text-gray-400 font-medium font-cursor'}>
-            {checked ?
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              :
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <circle cx="12" cy="12" r="9" strokeWidth="2" />
-              </svg>}
-            Reversable defect
-          </span>
-        )}
-      </RadioGroup.Option>
-    </RadioGroup>
   }
 
   function Coloredvessel() {
-    return <RadioGroup value={ca} onChange={setCa}>
-      <RadioGroup.Label className="font-semibold">Major vessels coloured by flourosopy</RadioGroup.Label>
-      <RadioGroup.Option value="0">
-        {({ checked }) => (
+    return <Radio name0="0" name1="1" name2="2" name3="3" label="Major vessels coloured by flourosopy" onChange={setCa} value={ca}/>
 
-          <span className={checked ? 'text-sm text-gray-700 font-medium items-center flex cursor-pointer' : 'items-center flex cursor-pointer text-sm text-gray-400 font-medium font-cursor'}>
-            {checked ?
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              :
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <circle cx="12" cy="12" r="9" strokeWidth="2" />
-              </svg>}
-            0
-          </span>
-
-        )}
-      </RadioGroup.Option>
-      <RadioGroup.Option value="1">
-        {({ checked }) => (
-
-          <span className={checked ? 'text-sm text-gray-700 font-medium items-center flex cursor-pointer' : 'items-center flex cursor-pointer text-sm text-gray-400 font-medium font-cursor'}>
-            {checked ?
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              :
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <circle cx="12" cy="12" r="9" strokeWidth="2" />
-              </svg>}
-            1
-          </span>
-        )}
-      </RadioGroup.Option>
-      <RadioGroup.Option value="2">
-        {({ checked }) => (
-
-          <span className={checked ? 'text-sm text-gray-700 font-medium items-center flex cursor-pointer' : 'items-center flex cursor-pointer text-sm text-gray-400 font-medium font-cursor'}>
-            {checked ?
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              :
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <circle cx="12" cy="12" r="9" strokeWidth="2" />
-              </svg>}
-            2
-          </span>
-        )}
-      </RadioGroup.Option>
-      <RadioGroup.Option value="3">
-        {({ checked }) => (
-
-          <span className={checked ? 'text-sm text-gray-700 font-medium items-center flex cursor-pointer' : 'items-center flex cursor-pointer text-sm text-gray-400 font-medium font-cursor'}>
-            {checked ?
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              :
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <circle cx="12" cy="12" r="9" strokeWidth="2" />
-              </svg>}
-            3
-          </span>
-        )}
-      </RadioGroup.Option>
-    </RadioGroup>
   }
 
   function Anginaslope() {
-    return <RadioGroup value={slope} onChange={setSlope}>
-      <RadioGroup.Label className="font-semibold">Peak exercise electrocardiographic slope</RadioGroup.Label>
-      <RadioGroup.Option value="0">
-        {({ checked }) => (
-
-          <span className={checked ? 'text-sm text-gray-700 font-medium items-center flex cursor-pointer' : 'items-center flex cursor-pointer text-sm text-gray-400 font-medium font-cursor'}>
-            {checked ?
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              :
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <circle cx="12" cy="12" r="9" strokeWidth="2" />
-              </svg>}
-            Upsloping
-          </span>
-
-        )}
-      </RadioGroup.Option>
-      <RadioGroup.Option value="1">
-        {({ checked }) => (
-
-          <span className={checked ? 'text-sm text-gray-700 font-medium items-center flex cursor-pointer' : 'items-center flex cursor-pointer text-sm text-gray-400 font-medium font-cursor'}>
-            {checked ?
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              :
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <circle cx="12" cy="12" r="9" strokeWidth="2" />
-              </svg>}
-            Flat
-          </span>
-        )}
-      </RadioGroup.Option>
-      <RadioGroup.Option value="2">
-        {({ checked }) => (
-
-          <span className={checked ? 'text-sm text-gray-700 font-medium items-center flex cursor-pointer' : 'items-center flex cursor-pointer text-sm text-gray-400 font-medium font-cursor'}>
-            {checked ?
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              :
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <circle cx="12" cy="12" r="9" strokeWidth="2" />
-              </svg>}
-            Downsloping
-          </span>
-        )}
-      </RadioGroup.Option>
-    </RadioGroup>
+    return <Radio name0="Upsloping" name1="Flat" name2="Downsloping" label="Peak exercise electrocardiographic slope" onChange={setSlope} value={slope}/>
   }
 
   function Exangexercise() {
-    return <RadioGroup value={exang} onChange={setExang}>
-      <RadioGroup.Label className="font-semibold">Chest pain (angina) after exercise</RadioGroup.Label>
-      <RadioGroup.Option value="0">
-        {({ checked }) => (
-
-          <span className={checked ? 'text-sm text-gray-700 font-medium items-center flex cursor-pointer' : 'items-center flex cursor-pointer text-sm text-gray-400 font-medium font-cursor'}>
-            {checked ?
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              :
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <circle cx="12" cy="12" r="9" strokeWidth="2" />
-              </svg>}
-            False
-          </span>
-
-        )}
-      </RadioGroup.Option>
-      <RadioGroup.Option value="1">
-        {({ checked }) => (
-
-          <span className={checked ? 'text-sm text-gray-700 font-medium items-center flex cursor-pointer' : 'items-center flex cursor-pointer text-sm text-gray-400 font-medium font-cursor'}>
-            {checked ?
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              :
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <circle cx="12" cy="12" r="9" strokeWidth="2" />
-              </svg>}
-            True
-          </span>
-        )}
-      </RadioGroup.Option>
-    </RadioGroup>
+    return <Radio name0="False" name1="True" label="Chest pain (angina) after exercise" onChange={setExang} value={exang}/>
   }
 
   function ECGresult() {
-    return <RadioGroup value={restecg} onChange={setRestecg}>
-      <RadioGroup.Label className="font-semibold">Resting electrocardiographic results</RadioGroup.Label>
-      <RadioGroup.Option value="0">
-        {({ checked }) => (
-
-          <span className={checked ? 'text-sm text-gray-700 font-medium items-center flex cursor-pointer' : 'items-center flex cursor-pointer text-sm text-gray-400 font-medium font-cursor'}>
-            {checked ?
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              :
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <circle cx="12" cy="12" r="9" strokeWidth="2" />
-              </svg>}
-            Normal
-          </span>
-
-        )}
-      </RadioGroup.Option>
-      <RadioGroup.Option value="1">
-        {({ checked }) => (
-
-          <span className={checked ? 'text-sm text-gray-700 font-medium items-center flex cursor-pointer' : 'items-center flex cursor-pointer text-sm text-gray-400 font-medium font-cursor'}>
-            {checked ?
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              :
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <circle cx="12" cy="12" r="9" strokeWidth="2" />
-              </svg>}
-            ST-T wave abnormality
-          </span>
-        )}
-      </RadioGroup.Option>
-      <RadioGroup.Option value="2">
-        {({ checked }) => (
-
-          <span className={checked ? 'text-sm text-gray-700 font-medium items-center flex cursor-pointer' : 'items-center flex cursor-pointer text-sm text-gray-400 font-medium font-cursor'}>
-            {checked ?
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              :
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <circle cx="12" cy="12" r="9" strokeWidth="2" />
-              </svg>}
-            Probable/definite ventricular hypertrophy
-          </span>
-        )}
-      </RadioGroup.Option>
-    </RadioGroup>
+    return <Radio name0="Normal" name1="ST-T wave abnormality" name2="Probable/definite ventricular hypertrophy" label="Resting electrocardiographic results" onChange={setRestecg} value={restecg}/>
   }
 
   function Bloodsugar() {
-    return <RadioGroup value={fbs} onChange={setFbs}>
-      <RadioGroup.Label className="font-semibold">Fasting blood sugar {'>'} 120 mg/dl </RadioGroup.Label>
-      <RadioGroup.Option value="0">
-        {({ checked }) => (
-
-          <span className={checked ? 'text-sm text-gray-700 font-medium items-center flex cursor-pointer' : 'items-center flex cursor-pointer text-sm text-gray-400 font-medium font-cursor'}>
-            {checked ?
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              :
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <circle cx="12" cy="12" r="9" strokeWidth="2" />
-              </svg>}
-            False
-          </span>
-
-        )}
-      </RadioGroup.Option>
-      <RadioGroup.Option value="1">
-        {({ checked }) => (
-
-          <span className={checked ? 'text-sm text-gray-700 font-medium items-center flex cursor-pointer' : 'items-center flex cursor-pointer text-sm text-gray-400 font-medium font-cursor'}>
-            {checked ?
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              :
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <circle cx="12" cy="12" r="9" strokeWidth="2" />
-              </svg>}
-            True
-          </span>
-        )}
-      </RadioGroup.Option>
-    </RadioGroup>
+    return <Radio name0="False" name1="True" label="Resting electrocardiographic results" onChange={setFbs} value={fbs}/>
   }
 
   function Chestpain() {
-    return <RadioGroup value={cp} onChange={setCp}>
-      <RadioGroup.Label className="font-semibold">Chest pain type</RadioGroup.Label>
-      <RadioGroup.Option value="0">
-        {({ checked }) => (
-          <span className={checked ? 'text-sm text-gray-700 font-medium items-center flex cursor-pointer' : 'items-center flex cursor-pointer text-sm text-gray-400 font-medium font-cursor'}>
-            {checked ?
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              :
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <circle cx="12" cy="12" r="9" strokeWidth="2" />
-              </svg>
-            }
-            Typical angina
-          </span>
-        )}
-      </RadioGroup.Option>
-      <RadioGroup.Option value="1">
-        {({ checked }) => (
-
-          <span className={checked ? 'text-sm text-gray-700 font-medium items-center flex cursor-pointer' : 'items-center flex cursor-pointer text-sm text-gray-400 font-medium font-cursor'}>
-            {checked ?
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              :
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <circle cx="12" cy="12" r="9" strokeWidth="2" />
-              </svg>
-            }
-            Atypical angina
-          </span>
-        )}
-      </RadioGroup.Option>
-      <RadioGroup.Option value="2">
-        {({ checked }) => (
-
-          <span className={checked ? 'text-sm text-gray-700 font-medium items-center flex cursor-pointer' : 'items-center flex cursor-pointer text-sm text-gray-400 font-medium font-cursor'}>
-            {checked ?
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              :
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <circle cx="12" cy="12" r="9" strokeWidth="2" />
-              </svg>
-            }
-            Non-anginal pain
-          </span>
-        )}
-      </RadioGroup.Option>
-      <RadioGroup.Option value="3">
-        {({ checked }) => (
-
-          <span className={checked ? 'text-sm text-gray-700 font-medium items-center flex cursor-pointer' : 'items-center flex cursor-pointer text-sm text-gray-400 font-medium font-cursor'}>
-            {checked ?
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              :
-              <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <circle cx="12" cy="12" r="9" strokeWidth="2" />
-              </svg>
-            }
-            Asymptomatic
-          </span>
-        )}
-      </RadioGroup.Option>
-    </RadioGroup>
+    return <Radio name0="Typical angina" name1="Atypical angina" name2="Non-anginal pain" name3="Asymptomatic" label="Chest pain type" onChange={setCp} value={cp}/>
   }
 
   function Biologicalsex() {
-    return (
-      <RadioGroup value={sex} onChange={setSex}>
-        <RadioGroup.Label className="font-semibold">Biological sex</RadioGroup.Label>
-        <RadioGroup.Option value="0">
-          {({ checked }) => (
-
-            <span className={checked ? 'text-sm text-gray-700 font-medium items-center flex cursor-pointer' : 'items-center flex cursor-pointer text-sm text-gray-400 font-medium font-cursor'}>
-              {checked ?
-                <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                :
-                <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <circle cx="12" cy="12" r="9" strokeWidth="2" />
-                </svg>
-              }
-              Female
-            </span>
-
-          )}
-        </RadioGroup.Option>
-        <RadioGroup.Option value="1">
-          {({ checked }) => (
-
-            <span className={checked ? 'text-sm text-gray-700 font-medium items-center flex cursor-pointer' : 'items-center flex cursor-pointer text-sm text-gray-400 font-medium font-cursor'}>
-              {checked ?
-                <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                :
-                <svg xmlns="http://www.w3.org/2000/svg" className='mr-1 h-4 w-4' fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <circle cx="12" cy="12" r="9" strokeWidth="2" />
-                </svg>
-              }
-              Male
-            </span>
-          )}
-        </RadioGroup.Option>
-      </RadioGroup>
-    )
+    return <Radio name0="Female" name1="Male" label="Chest pain type" onChange={setSex} value={sex}/>
   }
 }
 
