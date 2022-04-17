@@ -69,7 +69,7 @@ export default function home() {
         prediction_probability
       }
     },
-      // '/cardiac/result'
+    `/cardiac/result/${name.toLowerCase()}`
     )
   }
 
