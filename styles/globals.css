@@ -25,6 +25,18 @@ textarea::-webkit-scrollbar-thumb {
   background-color: #cfcfcf;
 }
 
+::-webkit-file-upload-button
+{	
+	padding:0;
+	border:0;
+	background:none;
+}
+
+[type='file'] {
+	border-radius: 0;
+	-webkit-appearance: none;
+}
+
 .range {
   -webkit-appearance: none;
   appearance: none;
@@ -51,4 +63,3 @@ textarea::-webkit-scrollbar-thumb {
   background: #04aa6d;
   cursor: pointer;
 }
-
