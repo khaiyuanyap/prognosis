@@ -2,8 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-body, html {
-  background-color: #f9fafb
+body,
+html {
+  background-color: #f9fafb;
 }
 
 textarea,
@@ -22,4 +23,31 @@ textarea::-webkit-scrollbar-thumb {
   background-clip: padding-box;
   border-radius: 1000rem;
   background-color: #cfcfcf;
+}
+
+.range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 0.5rem;
+  background: #d3d3d3;
+  outline: none;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.range::-webkit-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #04aa6d;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #04aa6d;
+  cursor: pointer;
 }

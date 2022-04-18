@@ -244,7 +244,7 @@ export default function result() {
                         {(() => {
                             if (data.prediction_probability < 0.5)
                                 return <>
-                                    <div className="mt-4 rounded-lg bg-white border-2 md:w-1/2">
+                                    <div className="mt-4 rounded-lg bg-white border-2 md:w-1/2 w-full">
                                         <div className="p-4">
                                             <h1 className="font-semibold text-lg">You're good to go</h1>
                                             <p>Maintain your current healthy lifestyle for a risk free life.</p>
@@ -253,7 +253,7 @@ export default function result() {
                                 </>
                             else if (data.prediction_probability > 0.5 && data.prediction_probability < 0.7)
                                 return <>
-                                    <div className="mt-4 rounded-lg bg-yellow-50 border-2 border-yellow-300 md:w-1/2">
+                                    <div className="mt-4 rounded-lg bg-yellow-50 border-2 border-yellow-300 md:w-1/2 w-full">
                                         <div className="p-4">
                                             <h1 className="font-semibold text-lg">Observe your lifestyle</h1>
                                             <p>Make some lifestyle changes in your diet by eating less fatty foods and exercise regularly.</p>
@@ -262,7 +262,7 @@ export default function result() {
                                 </>
                             else if (data.prediction_probability > 0.7 && data.prediction_probability < 0.8)
                                 return <>
-                                    <div className="mt-4 rounded-lg bg-red-50 border-2 border-red-400 md:w-1/2">
+                                    <div className="mt-4 rounded-lg bg-red-50 border-2 border-red-400 md:w-1/2 w-full">
                                         <div className="p-4">
                                             <h1 className="font-semibold text-lg">Consult a doctor</h1>
                                             <p>Consult a doctor or a nutritionist to improve your cardiac health. If you are feeling unwell call emergency services.</p>
@@ -271,7 +271,7 @@ export default function result() {
                                 </>
                             else if (data.prediction_probability > 0.8)
                                 return <>
-                                    <div className="mt-4 rounded-lg bg-red-50 border-2 border-red-500 md:w-1/2">
+                                    <div className="mt-4 rounded-lg bg-red-50 border-2 border-red-500 md:w-1/2 w-full">
                                         <div className="p-4">
                                             <h1 className="font-semibold text-lg">Emergency</h1>
                                             <p>Consult a doctor or a medical professional immediately. If you’re facing immediate cardiac discomfort, contact emergency services as soon as possible.</p>

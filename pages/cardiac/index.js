@@ -103,7 +103,11 @@ export default function home() {
                 <ECGresult />
                 <Input type="number" min="0" onChange={(e) => setThalach(e.target.value)} placeholder={"Maximum heart rate achieved (BPM)"} className="px-4 h-10 border-gray-200 border-2 rounded-md w-full flex items-center" />
                 <Exangexercise />
-                <Input type="number" step="any" min="-2.6" max="10" onChange={(e) => setOldpeak(e.target.value)} placeholder={"Excersing ST depression"} className="px-4 h-10 border-gray-200 border-2 rounded-md w-full flex items-center" />
+                <div className="mt-2 select-none">
+                  <label className="font-semibold">Exercising ST Depression</label>
+                  <input type="range" step="0.01" min="0" max="10" className="range" onChange={(e) => setOldpeak(e.target.value)} value={oldpeak} />
+                  {oldpeak}
+                </div>
                 <Anginaslope />
                 <Coloredvessel />
                 <Thalassemia />
