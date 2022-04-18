@@ -97,7 +97,7 @@ const InputFrame = ({model}) => {
                               {prediction !== [] &&
                                 prediction?.map((pred, index) => (
                                   <tr key={index}>
-                                    <td className="whitespace-nowrap px-3 py-1 text-sm text-gray-500">
+                                    <td className="break px-3 py-1 text-sm text-gray-500">
                                       {pred?.className}
                                     </td>
                                     <td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">

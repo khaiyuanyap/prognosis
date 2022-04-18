@@ -32,9 +32,8 @@ textarea::-webkit-scrollbar-thumb {
 	background:none;
 }
 
-[type='file'] {
-	border-radius: 0;
-	-webkit-appearance: none;
+input[type='file'] {
+  color: rgba(0, 0, 0, 0)
 }
 
 .range {
