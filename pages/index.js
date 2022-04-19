@@ -13,8 +13,8 @@ export default function home() {
       <main className="mx-8 py-5">
         <h1 className="mb-8 text-2xl font-semibold">Home Page</h1>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
-          <Link href="/cardiac">
-          <div
+          <Link href="/cardiac" passHref>
+          <a
             className="h-30 cursor-pointer rounded-xl border-2 border-red-400 bg-red-50 px-4 hover:opacity-70">
             <div className="my-2">
               <svg
@@ -30,9 +30,10 @@ export default function home() {
               </svg>
               <p className="text-lg font-semibold">Cardiac Health Prediction</p>
             </div>
-          </div>
+          </a>
           </Link>
-          <div className="h-30 cursor-pointer rounded-xl border-2 border-blue-400 bg-blue-50 px-4 hover:opacity-70">
+          <Link href="/diabetes" passhref>
+          <a className="h-30 cursor-pointer rounded-xl border-2 border-blue-400 bg-blue-50 px-4 hover:opacity-70">
             <div className="my-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -49,9 +50,10 @@ export default function home() {
               </svg>
               <p className="text-lg font-semibold">Diabetic Risk Prediction</p>
             </div>
-          </div>
-          <Link href="/melanoma">
-          <div className="h-30 cursor-pointer rounded-xl border-2 border-yellow-400 bg-yellow-50 px-4 hover:opacity-70">
+          </a>
+          </Link>
+          <Link href="/melanoma" passhref>
+          <a className="h-30 cursor-pointer rounded-xl border-2 border-yellow-400 bg-yellow-50 px-4 hover:opacity-70">
             <div className="my-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +70,7 @@ export default function home() {
               </svg>
               <p className="text-lg font-semibold">Skin Cancer Detection</p>
             </div>
-          </div>
+          </a>
           </Link>
           <div className="h-30 cursor-pointer rounded-xl border-2 border-green-400 bg-green-50 px-4 hover:opacity-70">
             <div className="my-2">

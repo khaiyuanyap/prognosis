@@ -5,7 +5,7 @@ export default function Accordion({className, title, description}) {
     <Disclosure as="div" className={className}>
       {({open}) => (
         <>
-          <Disclosure.Button className="flex w-full items-center justify-between rounded-lg bg-red-100 px-4 py-2 text-left text-sm font-medium text-red-900 hover:text-red-700 focus:outline-none focus-visible:ring focus-visible:ring-red-500 focus-visible:ring-opacity-75">
+          <Disclosure.Button className="flex w-full items-center justify-between rounded-lg px-4 py-2 text-left text-sm font-medium border-2 bg-white focus:outline-none focus-visible:ring focus-visible:ring-red-500 focus-visible:ring-opacity-75">
             <span>{title}</span>
             {open ? (
               <svg
