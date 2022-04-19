@@ -4,6 +4,8 @@ import InputFrame from "../../components/InputFrame"
 import * as tf from "@tensorflow/tfjs"
 import {useRouter} from "next/router"
 import Head from "next/head"
+import {Disclosure, Transition} from "@headlessui/react"
+import Accordion from "../../components/Accordion"
 
 const GetTested = () => {
   const [isLoading, setLoading] = useState(true)
@@ -57,6 +59,48 @@ const GetTested = () => {
           ) : (
             <InputFrame model={model} />
           )}
+        </div>
+        <div>
+          <div className="relative flex flex-col justify-center ">
+            <div className="relative px-6 pt-10 pb-10">
+              <div className="max-w-lg md:mx-auto">
+                <Accordion
+                  title="Melanocytic nevi"
+                  description="Skin lesion that appears within the first two decades of life. Common mole."
+                />
+                <Accordion
+                  className="mt-4"
+                  title="Melanoma"
+                  description="A type of skin cancer which develops from the cells (melanocytes) that control pigment of the skin. Most dangerous."
+                />
+                <Accordion
+                  className="mt-4"
+                  title="Benign keratosis-like lesions"
+                  description="Non-cancerous (benign) skin tumour that originates from cells in the outer layer of the skin. Common spots."
+                />
+                <Accordion
+                  className="mt-4"
+                  title="Actinic keratosis"
+                  description="Pre-cancerous area of thick, scaly, or crusty skin that is the result of a sunburn or sun exposure. Highly curable pre-cancer skin."
+                />
+                <Accordion
+                  className="mt-4"
+                  title="Vascular lesions"
+                  description="General skin lesion, consitutes of a wide spectrum of diseases. General medical condition."
+                />
+                <Accordion
+                  className="mt-4"
+                  title="Dermatofibroma"
+                  description="Dermatofibroma, or benign fibrous histiocytomas, is a benign nodule in the skin, typically on the legs, elbows and chest of an adult. Usually painless."
+                />
+                <Accordion
+                  className="mt-4"
+                  title="Basal cell carcinoma"
+                  description="Painless raised area of skin, which may be shiny with small blood vessels running over it. Common skin cancer."
+                />
+                </div>
+            </div>
+          </div>
         </div>
       </main>
     </div>

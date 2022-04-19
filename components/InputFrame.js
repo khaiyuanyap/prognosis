@@ -78,9 +78,6 @@ const InputFrame = ({model}) => {
                   ) : (
                     prediction.length !== 0 && (
                       <div className="my-2">
-                        <h4 className="mb-1 text-lg font-semibold">
-                          Predictions
-                        </h4>
                         <div>
                           <table className="min-w-full">
                             <thead className="rounded-md border">
