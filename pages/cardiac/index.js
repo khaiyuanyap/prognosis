@@ -1,7 +1,6 @@
 import Head from "next/head"
 import {Input} from "../../components/Form"
 import {useState} from "react"
-import {RadioGroup} from "@headlessui/react"
 import {useRouter} from "next/router"
 import Radio from "../../components/Radio"
 
@@ -279,7 +278,7 @@ export default function home() {
       <Radio
         name0="Female"
         name1="Male"
-        label="Chest pain type"
+        label="Biological sex"
         onChange={setSex}
         value={sex}
       />

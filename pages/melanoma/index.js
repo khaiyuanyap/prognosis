@@ -86,7 +86,7 @@ const GetTested = () => {
                 <Accordion
                   className="mt-4"
                   title="Vascular lesions"
-                  description="General skin lesion, consitutes of a wide spectrum of diseases. General medical condition."
+                  description="General skin lesion, constitutes of a wide spectrum of diseases. General medical condition."
                 />
                 <Accordion
                   className="mt-4"
