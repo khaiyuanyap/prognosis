@@ -143,7 +143,7 @@ export default function result() {
                     <div className="flex">
                       <a className="group inline-flex space-x-2 truncate text-sm">
                         <p className="truncate text-gray-500 group-hover:text-gray-900">
-                          Eating excessive amounts of food
+                          Excessive eating
                         </p>
                       </a>
                     </div>
@@ -208,7 +208,7 @@ export default function result() {
                     <div className="flex">
                       <a className="group inline-flex space-x-2 truncate text-sm">
                         <p className="truncate text-gray-500 group-hover:text-gray-900">
-                          Delayed healing of the skin and/or mucous membranes
+                         Delayed healing
                         </p>
                       </a>
                     </div>
@@ -224,7 +224,7 @@ export default function result() {
                     <div className="flex">
                       <a className="group inline-flex space-x-2 truncate text-sm">
                         <p className="truncate text-gray-500 group-hover:text-gray-900">
-                          Weakening of a muscle or group of muscles
+                          Muscle weakness
                         </p>
                       </a>
                     </div>
@@ -240,7 +240,7 @@ export default function result() {
                     <div className="flex">
                       <a className="group inline-flex space-x-2 truncate text-sm">
                         <p className="truncate text-gray-500 group-hover:text-gray-900">
-                          Feeling stiff in the limbs
+                          Stiffness
                         </p>
                       </a>
                     </div>
@@ -334,7 +334,7 @@ export default function result() {
               </tr>
               <tr>
                 <td className="whitespace-nowrap px-3 py-1 text-sm text-gray-500">
-                  Eating excessive amounts of food
+                  Excessive eating
                 </td>
                 <td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
                   {value(data.polyphagia)}
@@ -366,7 +366,7 @@ export default function result() {
               </tr>
               <tr>
                 <td className="whitespace-nowrap px-3 py-1 text-sm text-gray-500">
-                  Delayed healing of the skin
+                 Delayed healing
                 </td>
                 <td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
                   {value(data.delayed_healing)}
@@ -382,7 +382,7 @@ export default function result() {
               </tr>
               <tr>
                 <td className="whitespace-nowrap px-3 py-1 text-sm text-gray-500">
-                  Feeling stiff in the limbs
+                  Stiffness
                 </td>
                 <td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
                   {value(data.muscle_stiffness)}

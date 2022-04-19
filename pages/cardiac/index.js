@@ -109,7 +109,7 @@ export default function home() {
                 onSubmit={(e) => handleSubmit(e)}
                 method="post">
                 <p className="text-lg font-semibold">
-                  All fields must be filled in without units
+                  Cardiac checkup | All fields must be filled in without units
                 </p>
                 <Input
                   type="text"
