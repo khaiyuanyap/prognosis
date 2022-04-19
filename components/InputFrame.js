@@ -50,7 +50,7 @@ const InputFrame = ({model}) => {
                     src={imgFileUrl}
                     ref={(ele) => (selectedImgRef = ele)}
                     alt={imgFileUrl}
-                    className="w-full rounded-lg md:h-full md:w-auto"
+                    className="w-full rounded-lg lg:h-full h-80 md:w-auto object-cover"
                   />
                 </div>
                 <div>
