@@ -95,7 +95,7 @@ export default function result() {
                     <div className="flex">
                       <a className="group inline-flex space-x-2 truncate text-sm">
                         <p className="truncate text-gray-500 group-hover:text-gray-900">
-                          Extreme thirst
+                          Excessive thirst
                         </p>
                       </a>
                     </div>
@@ -111,7 +111,7 @@ export default function result() {
                     <div className="flex">
                       <a className="group inline-flex space-x-2 truncate text-sm">
                         <p className="truncate text-gray-500 group-hover:text-gray-900">
-                          Sudden weight loss
+                          Excessive weight loss
                         </p>
                       </a>
                     </div>
@@ -175,8 +175,7 @@ export default function result() {
                     <div className="flex">
                       <a className="group inline-flex space-x-2 truncate text-sm">
                         <p className="truncate text-gray-500 group-hover:text-gray-900">
-                          High blood sugar causes the lens of the eye to swell,
-                          which changes your ability to see
+                          Visual blurring
                         </p>
                       </a>
                     </div>
@@ -184,6 +183,22 @@ export default function result() {
                   <td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
                     <span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
                       {value(data.visual_blurring)}
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
+                    <div className="flex">
+                      <a className="group inline-flex space-x-2 truncate text-sm">
+                        <p className="truncate text-gray-500 group-hover:text-gray-900">
+                          Itching
+                        </p>
+                      </a>
+                    </div>
+                  </td>
+                  <td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
+                    <span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
+                      {value(data.itching)}
                     </span>
                   </td>
                 </tr>
@@ -208,7 +223,7 @@ export default function result() {
                     <div className="flex">
                       <a className="group inline-flex space-x-2 truncate text-sm">
                         <p className="truncate text-gray-500 group-hover:text-gray-900">
-                         Delayed healing
+                          Delayed healing
                         </p>
                       </a>
                     </div>
@@ -318,7 +333,7 @@ export default function result() {
               </tr>
               <tr>
                 <td className="whitespace-nowrap px-3 py-1 text-sm text-gray-500">
-                  Sudden weight loss
+                  Excessive weight loss
                 </td>
                 <td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
                   {value(data.weight)}
@@ -349,11 +364,19 @@ export default function result() {
                 </td>
               </tr>
               <tr>
-                <td className="px-3 py-1 text-sm text-gray-500 break">
-                  High blood sugar causes the lens of the eye to swell
+                <td className="break px-3 py-1 text-sm text-gray-500">
+                  Visual blurring
                 </td>
                 <td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
                   {value(data.visual_blurring)}
+                </td>
+              </tr>
+              <tr>
+                <td className="whitespace-nowrap px-3 py-1 text-sm text-gray-500">
+                 Itching
+                </td>
+                <td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
+                  {value(data.itching)}
                 </td>
               </tr>
               <tr>
@@ -366,7 +389,7 @@ export default function result() {
               </tr>
               <tr>
                 <td className="whitespace-nowrap px-3 py-1 text-sm text-gray-500">
-                 Delayed healing
+                  Delayed healing
                 </td>
                 <td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
                   {value(data.delayed_healing)}
@@ -374,7 +397,7 @@ export default function result() {
               </tr>
               <tr>
                 <td className="whitespace-nowrap px-3 py-1 text-sm text-gray-500">
-                  Weakening of muscle
+                  Muscle weakness
                 </td>
                 <td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
                   {value(data.partial_paresis)}

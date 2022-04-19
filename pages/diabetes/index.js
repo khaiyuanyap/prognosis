@@ -178,7 +178,7 @@ export default function home() {
       <Radio
         name0="False"
         name1="True"
-        label="Excessive or an abnormally large production or passage of urine"
+        label="Excessive urination"
         onChange={setPolyuria}
         value={polyuria}
       />
@@ -190,7 +190,7 @@ export default function home() {
       <Radio
         name0="False"
         name1="True"
-        label="Polydipsia is excessive thirst or excess drinking"
+        label="Excessive thirst"
         onChange={setPolydipsia}
         value={polydipsia}
       />
@@ -214,7 +214,7 @@ export default function home() {
       <Radio
         name0="False"
         name1="True"
-        label="Constant feeling of weakness"
+        label="Feeling weak with no reason"
         onChange={setWeakness}
         value={weakness}
       />
@@ -226,7 +226,7 @@ export default function home() {
       <Radio
         name0="False"
         name1="True"
-        label="Abnormally strong, incessant sensation of hunger or desire to eat"
+        label="Excessive eating"
         onChange={setPolyphagia}
         value={polyphagia}
       />
@@ -250,7 +250,7 @@ export default function home() {
       <Radio
         name0="False"
         name1="True"
-        label="Vision starts to blur or become blurred"
+        label="Visual blurring"
         onChange={setVisualBlurring}
         value={visual_blurring}
       />
@@ -274,7 +274,7 @@ export default function home() {
       <Radio
         name0="False"
         name1="True"
-        label="Sudden irritability"
+        label="Irritability with no reason"
         onChange={setIrritability}
         value={irritability}
       />
@@ -286,7 +286,7 @@ export default function home() {
       <Radio
         name0="False"
         name1="True"
-        label="Delayed healing of wounds"
+        label="Delayed healing"
         onChange={setDelayedHealing}
         value={delayed_healing}
       />
@@ -298,7 +298,7 @@ export default function home() {
       <Radio
         name0="False"
         name1="True"
-        label="Partial loss of voluntary movement or by impaired movement"
+        label="Weakening of muscle"
         onChange={setPartialParesis}
         value={partial_paresis}
       />
@@ -310,7 +310,7 @@ export default function home() {
       <Radio
         name0="False"
         name1="True"
-        label="Muscle stiffness"
+        label="Stiffness"
         onChange={setMuscleStiffness}
         value={muscle_stiffness}
       />
@@ -322,7 +322,7 @@ export default function home() {
       <Radio
         name0="False"
         name1="True"
-        label="Loss of hair from the scalp or any part of the body"
+        label="Hair loss"
         onChange={setAlopecia}
         value={alopecia}
       />
@@ -334,7 +334,7 @@ export default function home() {
       <Radio
         name0="False"
         name1="True"
-        label="Obesity is a condition characterized by abnormal or excessive fat accumulation"
+        label="Obesity"
         onChange={setObesity}
         value={obesity}
       />
