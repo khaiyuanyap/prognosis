@@ -4,7 +4,7 @@ import {useState} from "react"
 import {useRouter} from "next/router"
 import Radio from "../../components/Radio"
 
-export default function home() {
+export default function cardiac() {
   const router = useRouter()
   const [name, setName] = useState("")
   const [age, setAge] = useState("22")

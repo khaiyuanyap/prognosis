@@ -25,15 +25,14 @@ textarea::-webkit-scrollbar-thumb {
   background-color: #cfcfcf;
 }
 
-::-webkit-file-upload-button
-{
-	padding:0;
-	border:0;
-	background:none;
+::-webkit-file-upload-button {
+  padding: 0;
+  border: 0;
+  background: none;
 }
 
-input[type='file'] {
-  color: rgba(0, 0, 0, 0)
+input[type="file"] {
+  color: rgba(0, 0, 0, 0);
 }
 
 .range {
@@ -62,3 +61,4 @@ input[type='file'] {
   background: #04aa6d;
   cursor: pointer;
 }
+
