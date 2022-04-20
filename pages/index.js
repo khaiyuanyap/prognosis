@@ -30,7 +30,7 @@ export default function home() {
                   <img src="/diabetes.png" className="contain" />
                 </div>
                 <p className="mt-4 text-center text-xs font-semibold">
-                  Diabetes prediction
+                  Diabetes
                 </p>
               </a>
             </Link>
@@ -40,7 +40,7 @@ export default function home() {
                   <img src="/skins.png" className="contain" />
                 </div>
                 <p className="mt-4 text-center text-xs font-semibold">
-                  Skin cancer
+                  Skin Cancer
                 </p>
               </a>
             </Link>
@@ -50,7 +50,7 @@ export default function home() {
                   <img src="/hyper.png" className="contain" />
                 </div>
                 <p className="mt-4 text-center text-xs font-semibold">
-                  Hypertension prediction
+                  Hypertension
                 </p>
               </a>
             </Link>
@@ -60,7 +60,7 @@ export default function home() {
                   <img src="/work-in-progress-hi.png" className="contain" />
                 </div>
                 <p className="mt-4 text-center text-xs font-semibold">
-                  Mental health
+                  Mental Health
                 </p>
               </a>
             </Link>
@@ -70,7 +70,7 @@ export default function home() {
                   <img src="/work-in-progress-hi.png" className="contain" />
                 </div>
                 <p className="mt-4 text-center text-xs font-semibold">
-                  About us
+                  About Us
                 </p>
               </a>
             </Link>
