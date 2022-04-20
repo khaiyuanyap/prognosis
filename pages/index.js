@@ -40,7 +40,7 @@ export default function home() {
                   <img src="/skins.png" className="contain" />
                 </div>
                 <p className="mt-4 text-center text-xs font-semibold">
-                  Skin cancer identification
+                  Skin cancer
                 </p>
               </a>
             </Link>
