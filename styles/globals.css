@@ -4,61 +4,60 @@
 
 body,
 html {
-  background-color: #f9fafb;
+	background-color: #f9fafb;
 }
 
 textarea,
 input,
 div,
 button {
-  outline: none;
+	outline: none;
 }
 
 textarea::-webkit-scrollbar {
-  width: 1rem;
+	width: 1rem;
 }
 
 textarea::-webkit-scrollbar-thumb {
-  border: 0.3125rem solid transparent;
-  background-clip: padding-box;
-  border-radius: 1000rem;
-  background-color: #cfcfcf;
+	border: 0.3125rem solid transparent;
+	background-clip: padding-box;
+	border-radius: 1000rem;
+	background-color: #cfcfcf;
 }
 
 ::-webkit-file-upload-button {
-  padding: 0;
-  border: 0;
-  background: none;
+	padding: 0;
+	border: 0;
+	background: none;
 }
 
 input[type="file"] {
-  color: rgba(0, 0, 0, 0);
+	color: rgba(0, 0, 0, 0);
 }
 
 .range {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%;
-  height: 0.5rem;
-  background: #d3d3d3;
-  outline: none;
-  border-radius: 1rem;
-  cursor: pointer;
+	-webkit-appearance: none;
+	appearance: none;
+	width: 100%;
+	height: 0.5rem;
+	background: #d3d3d3;
+	outline: none;
+	border-radius: 1rem;
+	cursor: pointer;
 }
 
 .range::-webkit-range-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 25px;
-  height: 25px;
-  background: #04aa6d;
-  cursor: pointer;
+	-webkit-appearance: none;
+	appearance: none;
+	width: 25px;
+	height: 25px;
+	background: #04aa6d;
+	cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  background: #04aa6d;
-  cursor: pointer;
+	width: 25px;
+	height: 25px;
+	background: #04aa6d;
+	cursor: pointer;
 }
-
