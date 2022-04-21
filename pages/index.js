@@ -1,6 +1,7 @@
 import {useRouter} from "next/router"
 import Head from "next/head"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function home() {
   const router = useRouter()
@@ -12,65 +13,70 @@ export default function home() {
       </Head>
       <main className="mx-8 py-5">
         <h1 className="mb-8 text-2xl font-semibold">Home Page</h1>
-        <div className="inset-0 items-center justify-center md:absolute md:flex">
-          <div className="grid gap-4 grid-cols-3 justify-items-center">
+        <div className="inset-0 items-center justify-center md:absolute flex">
+          <div className="grid gap-4 grid-cols-3 lg:grid-cols-6 justify-items-center">
             <Link href="/cardiac" passHref>
-              <a className="my-4 h-20 w-20 cursor-pointer rounded-lg border-2 p-2 duration-200 hover:border-red-400 hover:bg-red-50 md:h-32 md:w-32">
+              <a className="bg-white space-y-2 my-4 h-20 w-20 cursor-pointer rounded-lg border p-2 duration-200 hover:border-red-400 hover:bg-red-50 md:h-32 md:w-32">
                 <div>
-                  <img src="/cardiac.png" className="contain" />
+                  <Image src="/cardiac.png" width={200} height={200} draggable={false}/>
                 </div>
-                <p className="mt-4 text-center text-xs font-semibold">
+                <p className="text-center text-[.70rem] font-semibold">
                   Cardiac Health
                 </p>
               </a>
             </Link>
+
             <Link href="/diabetes" passHref>
-              <a className="my-4 h-20 w-20 cursor-pointer rounded-lg border-2 p-2 duration-200 hover:border-red-400 hover:bg-red-50 md:h-32 md:w-32">
+            <a className="bg-white space-y-2 my-4 h-20 w-20 cursor-pointer rounded-lg border p-2 duration-200 hover:border-red-400 hover:bg-red-50 md:h-32 md:w-32">
                 <div>
-                  <img src="/diabetes.png" className="contain" />
+                  <Image src="/skins.png" width={200} height={200} draggable={false}/>
                 </div>
-                <p className="mt-4 text-center text-xs font-semibold">
-                  Diabetes prediction
+                <p className="text-center text-[.70rem] font-semibold">
+                  Skin Cancer
                 </p>
               </a>
             </Link>
-            <Link href="/melanoma" passHref>
-              <a className="my-4 h-20 w-20 cursor-pointer rounded-lg border-2 p-2 duration-200 hover:border-red-400 hover:bg-red-50 md:h-32 md:w-32">
+
+            <Link href="/diabetes" passHref>
+            <a className="bg-white space-y-2 my-4 h-20 w-20 cursor-pointer rounded-lg border p-2 duration-200 hover:border-red-400 hover:bg-red-50 md:h-32 md:w-32">
                 <div>
-                  <img src="/skins.png" className="contain" />
+                  <Image src="/diabetes.png" width={200} height={200} draggable={false}/>
                 </div>
-                <p className="mt-4 text-center text-xs font-semibold">
-                  Skin cancer
+                <p className="text-center text-[.70rem] font-semibold">
+                  Diabetes Prediction
                 </p>
               </a>
             </Link>
-            <Link href="/hypertension" passHref>
-              <a className="my-4 h-20 w-20 cursor-pointer rounded-lg border-2 p-2 duration-200 hover:border-red-400 hover:bg-red-50 md:h-32 md:w-32">
+
+            <Link href="/diabetes" passHref>
+            <a className="bg-white space-y-2 my-4 h-20 w-20 cursor-pointer rounded-lg border p-2 duration-200 hover:border-red-400 hover:bg-red-50 md:h-32 md:w-32">
                 <div>
-                  <img src="/hyper.png" className="contain" />
+                  <Image src="/hyper.png" width={200} height={200} draggable={false}/>
                 </div>
-                <p className="mt-4 text-center text-xs font-semibold">
-                  Hypertension prediction
+                <p className="text-center text-[.70rem] font-semibold">
+                High Blood Pressure
                 </p>
               </a>
             </Link>
-            <Link href="/hypertension" passHref>
-              <a className="my-4 h-20 w-20 cursor-pointer rounded-lg border-2 p-2 duration-200 hover:border-red-400 hover:bg-red-50 md:h-32 md:w-32">
+
+            <Link href="/diabetes" passHref>
+            <a className="bg-white space-y-2 my-4 h-20 w-20 cursor-pointer rounded-lg border p-2 duration-200 hover:border-red-400 hover:bg-red-50 md:h-32 md:w-32">
                 <div>
-                  <img src="/work-in-progress-hi.png" className="contain" />
+                <Image src="/ai.png" width={200} height={200} draggable={false}/>
                 </div>
-                <p className="mt-4 text-center text-xs font-semibold">
-                  Mental health
+                <p className="text-center text-[.70rem] font-semibold">
+                Mental Health
                 </p>
               </a>
             </Link>
-            <Link href="/hypertension" passHref>
-              <a className="my-4 h-20 w-20 cursor-pointer rounded-lg border-2 p-2 duration-200 hover:border-red-400 hover:bg-red-50 md:h-32 md:w-32">
+
+            <Link href="/diabetes" passHref>
+            <a className="bg-white space-y-2 my-4 h-20 w-20 cursor-pointer rounded-lg border p-2 duration-200 hover:border-red-400 hover:bg-red-50 md:h-32 md:w-32">
                 <div>
-                  <img src="/work-in-progress-hi.png" className="contain" />
+                  <Image src="/work-in-progress-hi.png" width={200} height={200} draggable={false}/>
                 </div>
-                <p className="mt-4 text-center text-xs font-semibold">
-                  About us
+                <p className="text-center text-[.70rem] font-semibold">
+                About Us
                 </p>
               </a>
             </Link>
