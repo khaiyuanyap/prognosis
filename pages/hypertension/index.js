@@ -40,6 +40,7 @@ export default function hypertension() {
 		router.push({
 			pathname: "/hypertension/result",
 			query: {
+				name,
 				age,
 				bmi,
 				drinking,
