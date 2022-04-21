@@ -90,7 +90,7 @@ export default function hypertension() {
 								onSubmit={(e) => handleSubmit(e)}
 								method="post">
 								<p className="text-lg font-semibold">
-									Diabetes checkup | All fields must be filled in without units
+									Hypertension | All fields must be filled in without units
 								</p>
 								<Input
 									type="text"
