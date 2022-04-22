@@ -34,7 +34,7 @@ export default function result() {
 				</button>
 				<div className="flex items-center">
 					<Image
-						src="/cardiac.png"
+						src="/hyper.png"
 						alt="Heart"
 						width="100"
 						height="100"></Image>
