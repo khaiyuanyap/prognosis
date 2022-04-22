@@ -36,7 +36,7 @@ export default function hypertension() {
 		})
 		const data = await res.json()
 		const risk = data.risk
-		const prediction_probability = data.risk
+		const prediction_probability = data.prediction_probability
 		router.push({
 			pathname: "/hypertension/result",
 			query: {
