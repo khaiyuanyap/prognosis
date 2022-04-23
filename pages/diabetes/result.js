@@ -15,6 +15,79 @@ export default function result() {
 		}
 	}
 
+	const table = [
+		{
+			label: "Excessive urination",
+			average: "False",
+			data: value(data.polyuria)
+		},
+		{
+			label: "Excessive thirst",
+			average: "False",
+			data: value(data.polydipsia)
+		},
+		{
+			label: "Excessive weight loss",
+			average: "False",
+			data: value(data.weight)
+		},
+		{
+			label: "Feeling weak with no reason",
+			average: "False",
+			data: value(data.weakness)
+		},
+		{
+			label: "Excessive eating",
+			average: "False",
+			data: value(data.polyphagia)
+		},
+		{
+			label: "Yeast infection",
+			average: "False",
+			data: value(data.genital_thrush)
+		},
+		{
+			label: "Visual blurring",
+			average: "False",
+			data: value(data.visual_blurring)
+		},
+		{
+			label: "Itching",
+			average: "False",
+			data: value(data.itching)
+		},
+		{
+			label: "Irritability with no reason",
+			average: "False",
+			data: value(data.irritability)
+		},
+		{
+			label: "Delayed healing",
+			average: "False",
+			data: value(data.delayed_healing)
+		},
+		{
+			label: "Muscle weakness",
+			average: "False",
+			data: value(data.partial_paresis)
+		},
+		{
+			label: "Stiffness",
+			average: "False",
+			data: value(data.muscle_stiffness)
+		},
+		{
+			label: "Hair loss",
+			average: "False",
+			data: value(data.alopecia)
+		},
+		{
+			label: "Obesity",
+			average: "False",
+			data: value(data.obesity)
+		}
+	]
+
 	return (
 		<div className="min-h-screen bg-gray-50">
 			<Head>
@@ -58,9 +131,6 @@ export default function result() {
 					</div>
 				</div>
 				<div className="mt-4 hidden px-4 print:block md:block">
-					<div></div>
-				</div>
-				<div className="mt-4 hidden px-4 print:block md:block">
 					<div>
 						<table className="min-w-full">
 							<thead className="rounded-md border">
@@ -68,236 +138,36 @@ export default function result() {
 									<th className="bg-gray-50 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
 										Tag
 									</th>
+									<th className="bg-gray-50 px-6 py-3 text-right text-xs font-medium uppercase tracking-wider text-gray-500">
+										Range / Usual Average
+									</th>
 									<th className="bg-gray-50 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
 										Value
 									</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
-										<div className="flex">
-											<a className="group inline-flex space-x-2 truncate text-sm">
-												<p className="truncate text-gray-500 group-hover:text-gray-900">
-													Excessive urination
+								{table && table.map((item, index) => (
+									<tr key={index}>
+										<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
+											<div className="flex">
+												<p className="group inline-flex space-x-2 truncate text-sm">
+													<p className="truncate text-gray-500 group-hover:text-gray-900">
+														{item.label}
+													</p>
 												</p>
-											</a>
-										</div>
-									</td>
-									<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
-										<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
-											{value(data.polyuria)}
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
-										<div className="flex">
-											<a className="group inline-flex space-x-2 truncate text-sm">
-												<p className="truncate text-gray-500 group-hover:text-gray-900">
-													Excessive thirst
-												</p>
-											</a>
-										</div>
-									</td>
-									<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
-										<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
-											{value(data.polydipsia)}
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
-										<div className="flex">
-											<a className="group inline-flex space-x-2 truncate text-sm">
-												<p className="truncate text-gray-500 group-hover:text-gray-900">
-													Excessive weight loss
-												</p>
-											</a>
-										</div>
-									</td>
-									<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
-										<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
-											{value(data.weight)}
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
-										<div className="flex">
-											<a className="group inline-flex space-x-2 truncate text-sm">
-												<p className="truncate text-gray-500 group-hover:text-gray-900">
-													Feeling weak with no reason
-												</p>
-											</a>
-										</div>
-									</td>
-									<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
-										<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
-											{value(data.weakness)}
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
-										<div className="flex">
-											<a className="group inline-flex space-x-2 truncate text-sm">
-												<p className="truncate text-gray-500 group-hover:text-gray-900">
-													Excessive eating
-												</p>
-											</a>
-										</div>
-									</td>
-									<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
-										<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
-											{value(data.polyphagia)}
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
-										<div className="flex">
-											<a className="group inline-flex space-x-2 truncate text-sm">
-												<p className="truncate text-gray-500 group-hover:text-gray-900">
-													Yeast infection
-												</p>
-											</a>
-										</div>
-									</td>
-									<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
-										<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
-											{value(data.genital_thrush)}
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
-										<div className="flex">
-											<a className="group inline-flex space-x-2 truncate text-sm">
-												<p className="truncate text-gray-500 group-hover:text-gray-900">
-													Visual blurring
-												</p>
-											</a>
-										</div>
-									</td>
-									<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
-										<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
-											{value(data.visual_blurring)}
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
-										<div className="flex">
-											<a className="group inline-flex space-x-2 truncate text-sm">
-												<p className="truncate text-gray-500 group-hover:text-gray-900">
-													Itching
-												</p>
-											</a>
-										</div>
-									</td>
-									<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
-										<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
-											{value(data.itching)}
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
-										<div className="flex">
-											<a className="group inline-flex space-x-2 truncate text-sm">
-												<p className="truncate text-gray-500 group-hover:text-gray-900">
-													Irritability with no reason
-												</p>
-											</a>
-										</div>
-									</td>
-									<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
-										<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
-											{value(data.irritability)}
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
-										<div className="flex">
-											<a className="group inline-flex space-x-2 truncate text-sm">
-												<p className="truncate text-gray-500 group-hover:text-gray-900">
-													Delayed healing
-												</p>
-											</a>
-										</div>
-									</td>
-									<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
-										<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
-											{value(data.delayed_healing)}
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
-										<div className="flex">
-											<a className="group inline-flex space-x-2 truncate text-sm">
-												<p className="truncate text-gray-500 group-hover:text-gray-900">
-													Muscle weakness
-												</p>
-											</a>
-										</div>
-									</td>
-									<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
-										<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
-											{value(data.partial_paresis)}
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
-										<div className="flex">
-											<a className="group inline-flex space-x-2 truncate text-sm">
-												<p className="truncate text-gray-500 group-hover:text-gray-900">
-													Stiffness
-												</p>
-											</a>
-										</div>
-									</td>
-									<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
-										<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
-											{value(data.muscle_stiffness)}
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
-										<div className="flex">
-											<a className="group inline-flex space-x-2 truncate text-sm">
-												<p className="truncate text-gray-500 group-hover:text-gray-900">
-													Hair loss
-												</p>
-											</a>
-										</div>
-									</td>
-									<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
-										<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
-											{value(data.alopecia)}
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
-										<div className="flex">
-											<a className="group inline-flex space-x-2 truncate text-sm">
-												<p className="truncate text-gray-500 group-hover:text-gray-900">
-													Obesity
-												</p>
-											</a>
-										</div>
-									</td>
-									<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
-										<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
-											{value(data.obesity)}
-										</span>
-									</td>
-								</tr>
+											</div>
+										</td>
+										<td className="whitespace-nowrap px-6 py-3 text-right text-sm text-gray-500">
+											{item.average}
+										</td>
+										<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
+											<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
+												{item.data}
+											</span>
+										</td>
+									</tr>
+								))}
 							</tbody>
 						</table>
 					</div>
@@ -315,118 +185,16 @@ export default function result() {
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td className="whitespace-nowrap px-3 py-1 text-sm text-gray-500">
-									Excessive urination
-								</td>
-								<td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
-									{value(data.polyuria)}
-								</td>
-							</tr>
-							<tr>
-								<td className="whitespace-nowrap px-3 py-1 text-sm text-gray-500">
-									Extreme thirst
-								</td>
-								<td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
-									{value(data.polydipsia)}
-								</td>
-							</tr>
-							<tr>
-								<td className="whitespace-nowrap px-3 py-1 text-sm text-gray-500">
-									Excessive weight loss
-								</td>
-								<td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
-									{value(data.weight)}
-								</td>
-							</tr>
-							<tr>
-								<td className="whitespace-nowrap px-3 py-1 text-sm text-gray-500">
-									Feeling weak with no reason
-								</td>
-								<td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
-									{value(data.weakness)}
-								</td>
-							</tr>
-							<tr>
-								<td className="whitespace-nowrap px-3 py-1 text-sm text-gray-500">
-									Excessive eating
-								</td>
-								<td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
-									{value(data.polyphagia)}
-								</td>
-							</tr>
-							<tr>
-								<td className="whitespace-nowrap px-3 py-1 text-sm text-gray-500">
-									Yeast infection
-								</td>
-								<td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
-									{value(data.genital_thrush)}
-								</td>
-							</tr>
-							<tr>
-								<td className="break px-3 py-1 text-sm text-gray-500">
-									Visual blurring
-								</td>
-								<td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
-									{value(data.visual_blurring)}
-								</td>
-							</tr>
-							<tr>
-								<td className="whitespace-nowrap px-3 py-1 text-sm text-gray-500">
-									Itching
-								</td>
-								<td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
-									{value(data.itching)}
-								</td>
-							</tr>
-							<tr>
-								<td className="whitespace-nowrap px-3 py-1 text-sm text-gray-500">
-									Irritability with no reason
-								</td>
-								<td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
-									{value(data.irritability)}
-								</td>
-							</tr>
-							<tr>
-								<td className="whitespace-nowrap px-3 py-1 text-sm text-gray-500">
-									Delayed healing
-								</td>
-								<td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
-									{value(data.delayed_healing)}
-								</td>
-							</tr>
-							<tr>
-								<td className="whitespace-nowrap px-3 py-1 text-sm text-gray-500">
-									Muscle weakness
-								</td>
-								<td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
-									{value(data.partial_paresis)}
-								</td>
-							</tr>
-							<tr>
-								<td className="whitespace-nowrap px-3 py-1 text-sm text-gray-500">
-									Stiffness
-								</td>
-								<td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
-									{value(data.muscle_stiffness)}
-								</td>
-							</tr>
-							<tr>
-								<td className="whitespace-nowrap px-3 py-1 text-sm text-gray-500">
-									Hair loss
-								</td>
-								<td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
-									{value(data.alopecia)}{" "}
-								</td>
-							</tr>
-							<tr>
-								<td className="whitespace-nowrap px-3 py-1 text-sm text-gray-500">
-									Obesity
-								</td>
-								<td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
-									{value(data.obesity)}
-								</td>
-							</tr>
+							{table && table.map((item, index) => (
+								<tr key={index}>
+									<td className="whitespace-nowrap px-3 py-1 text-sm text-gray-500">
+										{item.label}
+									</td>
+									<td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
+										{item.data}
+									</td>
+								</tr>
+							))}
 						</tbody>
 					</table>
 				</div>
