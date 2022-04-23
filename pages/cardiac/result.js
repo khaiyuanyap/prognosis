@@ -7,6 +7,34 @@ export default function result() {
 	const router = useRouter()
 	const data = router.query
 
+	const table = [
+		{
+			label: "Resting blood pressure",
+			average: "94 – 200 (Average: 125) mm Hg",
+			data: data.trestbps
+		},
+		{
+			label: "Serum cholestoral",
+			average: "126 – 564 (Average: 213) mg/dL",
+			data: data.chol
+		},
+		{
+			label: "Maximum heart rate achieved",
+			average: "71 – 202 (Average: 150) BPM",
+			data: data.thalach
+		},
+		{
+			label: "Exercising ECG depression",
+			average: "0 – 6.2 (Average: 0) mm Hg",
+			data: data.oldpeak
+		},
+		{
+			label: "Chance of heart attack",
+			average: "Low risk < 50%, High risk > 50%",
+			data: `${(data.prediction_probability * 100).toFixed(2)}%`
+		}
+	]
+
 	return (
 		<div className="min-h-screen bg-gray-50">
 			<Head>
@@ -68,101 +96,27 @@ export default function result() {
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
-										<div className="flex">
-											<a className="group inline-flex space-x-2 truncate text-sm">
-												<p className="truncate text-gray-500 group-hover:text-gray-900">
-													Resting blood pressure
+								{table && table.map((item, index) => (
+									<tr key={index}>
+										<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
+											<div className="flex">
+												<p className="group inline-flex space-x-2 truncate text-sm">
+													<p className="truncate text-gray-500 group-hover:text-gray-900">
+														{item.label}
+													</p>
 												</p>
-											</a>
-										</div>
-									</td>
-									<td className="whitespace-nowrap px-6 py-3 text-right text-sm text-gray-500">
-										94 – 200 (Average: 125) mm Hg
-									</td>
-									<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
-										<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
-											{data.trestbps} mm Hg
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
-										<div className="flex">
-											<a className="group inline-flex space-x-2 truncate text-sm">
-												<p className="truncate text-gray-500 group-hover:text-gray-900">
-													Serum cholestoral
-												</p>
-											</a>
-										</div>
-									</td>
-									<td className="whitespace-nowrap px-6 py-3 text-right text-sm text-gray-500">
-										126 – 564 (Average: 213) mg/dL
-									</td>
-									<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
-										<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
-											{data.chol} mg/dL
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
-										<div className="flex">
-											<a className="group inline-flex space-x-2 truncate text-sm">
-												<p className="truncate text-gray-500 group-hover:text-gray-900">
-													Maximum heart rate achieved
-												</p>
-											</a>
-										</div>
-									</td>
-									<td className="whitespace-nowrap px-6 py-3 text-right text-sm text-gray-500">
-										71 – 202 (Average: 150) BPM
-									</td>
-									<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
-										<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
-											{data.thalach} BPM
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
-										<div className="flex">
-											<a className="group inline-flex space-x-2 truncate text-sm">
-												<p className="truncate text-gray-500 group-hover:text-gray-900">
-													Excersing ECG depression
-												</p>
-											</a>
-										</div>
-									</td>
-									<td className="whitespace-nowrap px-6 py-3 text-right text-sm text-gray-500">
-										0 – 6.2 (Average: 0) mm Hg
-									</td>
-									<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
-										<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
-											{data.oldpeak}
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
-										<div className="flex">
-											<a className="group inline-flex space-x-2 truncate text-sm">
-												<p className="truncate text-gray-500 group-hover:text-gray-900">
-													Chance of heart attack
-												</p>
-											</a>
-										</div>
-									</td>
-									<td className="whitespace-nowrap px-6 py-3 text-right text-sm text-gray-500">
-										Low risk {"<"} 50%, High risk {">"} 50%
-									</td>
-									<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
-										<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
-											{(data.prediction_probability * 100).toFixed(2)}%
-										</span>
-									</td>
-								</tr>
+											</div>
+										</td>
+										<td className="whitespace-nowrap px-6 py-3 text-right text-sm text-gray-500">
+											{item.average}
+										</td>
+										<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
+											<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
+												{item.data}
+											</span>
+										</td>
+									</tr>
+								))}
 							</tbody>
 						</table>
 					</div>
@@ -180,46 +134,16 @@ export default function result() {
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td className="whitespace-nowrap px-3 py-1 text-sm text-gray-500">
-									Resting blood pressure
-								</td>
-								<td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
-									{data.trestbps} mm Hg
-								</td>
-							</tr>
-							<tr>
-								<td className="whitespace-nowrap px-3 py-1 text-sm text-gray-500">
-									Serum cholestoral
-								</td>
-								<td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
-									{data.chol} mg/dL
-								</td>
-							</tr>
-							<tr>
-								<td className="whitespace-nowrap px-3 py-1 text-sm text-gray-500">
-									Maximum heart rate achieved
-								</td>
-								<td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
-									{data.thalach} BPM
-								</td>
-							</tr>
-							<tr>
-								<td className="whitespace-nowrap px-3 py-1 text-sm text-gray-500">
-									Excersing ECG depression
-								</td>
-								<td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
-									{data.oldpeak}
-								</td>
-							</tr>
-							<tr>
-								<td className="whitespace-nowrap px-3 py-1 text-sm text-gray-500">
-									Chance of heart attack
-								</td>
-								<td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
-									{(data.prediction_probability * 100).toFixed(2)}%
-								</td>
-							</tr>
+							{table && table.map((item, index) => (
+								<tr key={index}>
+									<td className="whitespace-nowrap px-3 py-1 text-sm text-gray-500">
+										{item.label}
+									</td>
+									<td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
+										{item.data}
+									</td>
+								</tr>
+							))}
 						</tbody>
 					</table>
 				</div>
