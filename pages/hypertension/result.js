@@ -113,7 +113,7 @@ export default function result() {
 										<div className="flex">
 											<a className="group inline-flex space-x-2 truncate text-sm">
 												<p className="truncate text-gray-500 group-hover:text-gray-900">
-													Do you excercise in the past month
+													Exercise
 												</p>
 											</a>
 										</div>
@@ -132,7 +132,7 @@ export default function result() {
 										<div className="flex">
 											<a className="group inline-flex space-x-2 truncate text-sm">
 												<p className="truncate text-gray-500 group-hover:text-gray-900">
-													How much junk food you eat in a day on average
+													Daily junk food average
 												</p>
 											</a>
 										</div>
@@ -178,7 +178,7 @@ export default function result() {
 										<div className="flex">
 											<a className="group inline-flex space-x-2 truncate text-sm">
 												<p className="truncate text-gray-500 group-hover:text-gray-900">
-													Have you smoke in the past month
+													Smoking
 												</p>
 											</a>
 										</div>
@@ -227,7 +227,7 @@ export default function result() {
 							</tr>
 							<tr>
 								<td className="break px-3 py-1 text-sm text-gray-500">
-									Do you excercise in the past month
+									Exercise
 								</td>
 								<td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
 									{value(data.exercise)}
@@ -235,7 +235,7 @@ export default function result() {
 							</tr>
 							<tr>
 								<td className="break px-3 py-1 text-sm text-gray-500">
-									How much junk food you eat in a day on average
+									Daily junk food average
 								</td>
 								<td className="px-3 py-1 text-right text-sm font-semibold text-gray-500">
 									{data.junk}
@@ -259,7 +259,7 @@ export default function result() {
 							</tr>
 							<tr>
 								<td className="break px-3 py-1 text-sm text-gray-500">
-								Have you smoke in the past month
+									Smoking
 								</td>
 								<td className="px-3 py-1 text-right text-sm font-semibold text-gray-500">
 									{data.smoking}

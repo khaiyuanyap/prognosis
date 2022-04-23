@@ -64,6 +64,9 @@ const GetTested = () => {
 					<div className="relative flex flex-col justify-center ">
 						<div className="relative px-6 pt-10 pb-10">
 							<div className="max-w-lg md:mx-auto">
+							<h2 className="mb-4 text-lg font-semibold">
+				Understanding your results
+							</h2>
 								<Accordion
 									title="Melanocytic nevi"
 									description="Skin lesion that appears within the first two decades of life. Common mole."

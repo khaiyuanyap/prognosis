@@ -125,7 +125,7 @@ export default function hypertension() {
 									<input
 										type="range"
 										min="0"
-										max="400"
+										max="100"
 										className="range"
 										onChange={(e) => setJunk(e.target.value)}
 										value={junk}
@@ -164,7 +164,7 @@ export default function hypertension() {
 			<Radio
 				name0="False"
 				name1="True"
-				label="Do you consume alcohol is the past month"
+				label="Did you consume alcohol in the past month"
 				onChange={setDrinking}
 				value={drinking}
 			/>
@@ -176,7 +176,7 @@ export default function hypertension() {
 			<Radio
 				name0="False"
 				name1="True"
-				label="Do you excercise in the past month"
+				label="Did you excercise in the past month"
 				onChange={setExercise}
 				value={exercise}
 			/>
@@ -201,7 +201,7 @@ export default function hypertension() {
 			<Radio
 				name0="False"
 				name1="True"
-				label="Do you smoke in the past month"
+				label="Did you smoke in the past month"
 				onChange={setSmoking}
 				value={smoking}
 			/>

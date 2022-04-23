@@ -84,7 +84,7 @@ export default function home() {
 	return (
 		<div>
 			<Head>
-				<title>Cardiac Health Checkup</title>
+				<title>Diabetes Checkup</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
