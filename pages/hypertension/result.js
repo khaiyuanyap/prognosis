@@ -7,10 +7,12 @@ export default function result() {
 	const router = useRouter()
 	const data = router.query
 
-	if (process.env.NODE_ENV === "development") {
-		useEffect(() => {
-			console.log(data)
-		}, [data])
+	function value(boolean) {
+		if (boolean === "0") {
+			return "False"
+		} else {
+			return "True"
+		}
 	}
 
 	return (
@@ -51,6 +53,222 @@ export default function result() {
 						<h2 className="text-md text-lg md:text-xl">Hypertension Report</h2>
 					</div>
 				</div>
+				<div className="mt-4 hidden px-4 print:block md:block">
+					<div>
+						<table className="min-w-full">
+							<thead className="rounded-md border">
+								<tr className="rounded-md border">
+									<th className="bg-gray-50 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
+										Tag
+									</th>
+									<th className="bg-gray-50 px-6 py-3 text-right text-xs font-medium uppercase tracking-wider text-gray-500">
+										Range / Usual Average
+									</th>
+									<th className="bg-gray-50 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
+										Value
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
+										<div className="flex">
+											<a className="group inline-flex space-x-2 truncate text-sm">
+												<p className="truncate text-gray-500 group-hover:text-gray-900">
+													Body mass index
+												</p>
+											</a>
+										</div>
+									</td>
+									<td className="whitespace-nowrap px-6 py-3 text-right text-sm text-gray-500">
+										18.5 – 24.9
+									</td>
+									<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
+										<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
+											{data.bmi}
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
+										<div className="flex">
+											<a className="group inline-flex space-x-2 truncate text-sm">
+												<p className="truncate text-gray-500 group-hover:text-gray-900">
+													Alcohol intake and consumption
+												</p>
+											</a>
+										</div>
+									</td>
+									<td className="whitespace-nowrap px-6 py-3 text-right text-sm text-gray-500">
+										False
+									</td>
+									<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
+										<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
+											{value(data.drinking)}
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
+										<div className="flex">
+											<a className="group inline-flex space-x-2 truncate text-sm">
+												<p className="truncate text-gray-500 group-hover:text-gray-900">
+													Do you excercise in the past month
+												</p>
+											</a>
+										</div>
+									</td>
+									<td className="whitespace-nowrap px-6 py-3 text-right text-sm text-gray-500">
+										True
+									</td>
+									<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
+										<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
+											{value(data.exercise)}
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
+										<div className="flex">
+											<a className="group inline-flex space-x-2 truncate text-sm">
+												<p className="truncate text-gray-500 group-hover:text-gray-900">
+													How much junk food you eat in a day on average
+												</p>
+											</a>
+										</div>
+									</td>
+									<td className="whitespace-nowrap px-6 py-3 text-right text-sm text-gray-500">
+										0
+									</td>
+									<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
+										<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
+											{data.junk}
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
+										<div className="flex">
+											<a className="group inline-flex space-x-2 truncate text-sm">
+												<p className="truncate text-gray-500 group-hover:text-gray-900">
+													Sleep quality
+												</p>
+											</a>
+										</div>
+									</td>
+									<td className="whitespace-nowrap px-6 py-3 text-right text-sm text-gray-500">
+										Good
+									</td>
+									<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
+										<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
+											{(() => {
+												if (data.sleep === "0") {
+													return "Good"
+												} else if (data.sleep === "1") {
+													return "Moderate"
+												} else if (data.sleep === "2") {
+													return "Bad"
+												}
+											})()}
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
+										<div className="flex">
+											<a className="group inline-flex space-x-2 truncate text-sm">
+												<p className="truncate text-gray-500 group-hover:text-gray-900">
+													Have you smoke in the past month
+												</p>
+											</a>
+										</div>
+									</td>
+									<td className="whitespace-nowrap px-6 py-3 text-right text-sm text-gray-500">
+										False
+									</td>
+									<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
+										<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
+											{value(data.smoking)}
+										</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div className="mt-4 block px-4 print:hidden md:hidden">
+					<table className="min-w-full">
+						<thead className="rounded-md border">
+							<tr className="rounded-md border">
+								<th className="bg-gray-50 px-3 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
+									Tag
+								</th>
+								<th className="bg-gray-50 px-3 py-3 text-right text-xs font-medium uppercase tracking-wider text-gray-500">
+									Value
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td className="break px-3 py-1 text-sm text-gray-500">
+									Body mass index
+								</td>
+								<td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
+									{data.bmi}
+								</td>
+							</tr>
+							<tr>
+								<td className="break px-3 py-1 text-sm text-gray-500">
+									Alcohol intake and consumption
+								</td>
+								<td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
+									{value(data.drinking)}
+								</td>
+							</tr>
+							<tr>
+								<td className="break px-3 py-1 text-sm text-gray-500">
+									Do you excercise in the past month
+								</td>
+								<td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
+									{value(data.exercise)}
+								</td>
+							</tr>
+							<tr>
+								<td className="break px-3 py-1 text-sm text-gray-500">
+									How much junk food you eat in a day on average
+								</td>
+								<td className="px-3 py-1 text-right text-sm font-semibold text-gray-500">
+									{data.junk}
+								</td>
+							</tr>
+							<tr>
+								<td className="break px-3 py-1 text-sm text-gray-500">
+									Sleep quality
+								</td>
+								<td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
+									{(() => {
+										if (data.sleep === "0") {
+											return "Good"
+										} else if (data.sleep === "1") {
+											return "Moderate"
+										} else if (data.sleep === "2") {
+											return "Bad"
+										}
+									})()}{" "}
+								</td>
+							</tr>
+							<tr>
+								<td className="break px-3 py-1 text-sm text-gray-500">
+								Have you smoke in the past month
+								</td>
+								<td className="px-3 py-1 text-right text-sm font-semibold text-gray-500">
+									{data.smoking}
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
 				<div className="mt-4 hidden px-4 print:block md:block">
 					<div className="flex items-center">
 						{(() => {
