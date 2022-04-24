@@ -41,7 +41,11 @@ export default function result() {
 					Go Back
 				</button>
 				<div className="flex items-center">
-					<Image src="/hyper.png" alt="Heart" width="100" height="100"></Image>
+					<Image
+						src="/images/hyper.png"
+						alt="Heart"
+						width="100"
+						height="100"></Image>
 					<div className="ml-2">
 						<p className="text-sm font-semibold">
 							{data.sex == 0 ? <span>Female</span> : <span>Male</span>} (

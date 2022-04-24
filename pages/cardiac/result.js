@@ -62,7 +62,7 @@ export default function result() {
 				</button>
 				<div className="flex items-center">
 					<Image
-						src="/cardiac.png"
+						src="/images/cardiac.png"
 						alt="Heart"
 						width="100"
 						height="100"></Image>
@@ -96,27 +96,28 @@ export default function result() {
 								</tr>
 							</thead>
 							<tbody>
-								{table && table.map((item, index) => (
-									<tr key={index}>
-										<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
-											<div className="flex">
-												<p className="group inline-flex space-x-2 truncate text-sm">
-													<p className="truncate text-gray-500 group-hover:text-gray-900">
-														{item.label}
+								{table &&
+									table.map((item, index) => (
+										<tr key={index}>
+											<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
+												<div className="flex">
+													<p className="group inline-flex space-x-2 truncate text-sm">
+														<p className="truncate text-gray-500 group-hover:text-gray-900">
+															{item.label}
+														</p>
 													</p>
-												</p>
-											</div>
-										</td>
-										<td className="whitespace-nowrap px-6 py-3 text-right text-sm text-gray-500">
-											{item.average}
-										</td>
-										<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
-											<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
-												{item.data}
-											</span>
-										</td>
-									</tr>
-								))}
+												</div>
+											</td>
+											<td className="whitespace-nowrap px-6 py-3 text-right text-sm text-gray-500">
+												{item.average}
+											</td>
+											<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
+												<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
+													{item.data}
+												</span>
+											</td>
+										</tr>
+									))}
 							</tbody>
 						</table>
 					</div>
@@ -134,16 +135,17 @@ export default function result() {
 							</tr>
 						</thead>
 						<tbody>
-							{table && table.map((item, index) => (
-								<tr key={index}>
-									<td className="whitespace-nowrap px-3 py-1 text-sm text-gray-500">
-										{item.label}
-									</td>
-									<td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
-										{item.data}
-									</td>
-								</tr>
-							))}
+							{table &&
+								table.map((item, index) => (
+									<tr key={index}>
+										<td className="whitespace-nowrap px-3 py-1 text-sm text-gray-500">
+											{item.label}
+										</td>
+										<td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
+											{item.data}
+										</td>
+									</tr>
+								))}
 						</tbody>
 					</table>
 				</div>
