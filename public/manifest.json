@@ -1,0 +1,24 @@
+{
+	"background_color": "#ffffff",
+	"description": "Prognosis is a web app that predicts your risk of getting diseases with machine learning.",
+	"dir": "ltr",
+	"display": "standalone",
+	"name": "Prognosis",
+	"orientation": "any",
+	"scope": "/",
+	"short_name": "Prognosis",
+	"start_url": "/",
+	"theme_color": "#ffffff",
+	"categories": [],
+	"screenshots": [],
+	"icons": [
+		{
+			"src": "/favicon.ico"
+		},
+		{
+			"src": "/favicon.ico",
+			"type": "image/x-icon"
+		}
+	],
+	"shortcuts": []
+}

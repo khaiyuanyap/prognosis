@@ -95,7 +95,7 @@ export default function home() {
 							</a>
 						</Link>
 
-						<Link href="/404" passHref>
+						<Link href="/about" passHref>
 							<a className="my-4 h-20 w-20 cursor-pointer space-y-2 rounded-lg border bg-white p-2 duration-200 hover:border-red-400 hover:bg-red-50 md:h-32 md:w-32">
 								<div>
 									<Image
