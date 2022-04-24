@@ -15,7 +15,7 @@ function MyApp({Component, pageProps}) {
 				<meta name="keywords" content="Keywords" />
 				<link rel="manifest" href="/manifest.json" />
 				<meta name="theme-color" content="#f9fafb" />
-				<link rel="apple-touch-icon" href="/icons/apple.png">
+				<link rel="apple-touch-icon" href="/icons/apple.png"/>
 			</Head>
 			<Component {...pageProps} />
 		</>
