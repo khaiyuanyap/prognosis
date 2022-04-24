@@ -1,10 +1,15 @@
 import {useRouter} from "next/router"
+import Head from "next/head"
 
 export default function about() {
 	const router = useRouter()
 
 	return (
 		<main className="min-h-screen bg-gray-50 px-5 pt-5">
+			<Head>
+				<title>About Us</title>
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
 			<div>
 				<button
 					onClick={() => router.push("/")}
