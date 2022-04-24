@@ -1,7 +1,6 @@
 import {useRouter} from "next/router"
 import Head from "next/head"
 import Image from "next/image"
-import {useEffect} from "react"
 
 export default function result() {
 	const router = useRouter()

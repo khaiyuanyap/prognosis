@@ -1,19 +1,47 @@
 import {useRouter} from "next/router"
 import Head from "next/head"
 import Image from "next/image"
-import {useEffect} from "react"
+import value from "../../lib/boolean"
 
 export default function result() {
 	const router = useRouter()
 	const data = router.query
 
-	function value(boolean) {
-		if (boolean === "0") {
-			return "False"
-		} else {
-			return "True"
+	const table = [
+		{
+			label: "Body mass index",
+			average: "18.5 – 24.9",
+			data: data.bmi
+		},
+		{
+			label: "Exercise",
+			average: "True",
+			data: value(data.exercise)
+		},
+		{
+			label: "Daily junk food average",
+			average: "0 – 2",
+			data: data.junk
+		},
+		{
+			label: "Sleep quality",
+			average: "Good",
+			data: (() => {
+				if (data.sleep === "0") {
+					return "Good"
+				} else if (data.sleep === "1") {
+					return "Moderate"
+				} else if (data.sleep === "2") {
+					return "Bad"
+				}
+			})()
+		},
+		{
+			label: "Smoking",
+			average: "False",
+			data: value(data.smoking)
 		}
-	}
+	]
 
 	return (
 		<div className="min-h-screen bg-gray-50">
@@ -74,128 +102,27 @@ export default function result() {
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
-										<div className="flex">
-											<a className="group inline-flex space-x-2 truncate text-sm">
-												<p className="truncate text-gray-500 group-hover:text-gray-900">
-													Body mass index
+								{table.map((item, index) => (
+									<tr key={index}>
+										<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
+											<div className="flex">
+												<p className="group inline-flex space-x-2 truncate text-sm">
+													<p className="truncate text-gray-500 group-hover:text-gray-900">
+														{item.label}
+													</p>
 												</p>
-											</a>
-										</div>
-									</td>
-									<td className="whitespace-nowrap px-6 py-3 text-right text-sm text-gray-500">
-										18.5 – 24.9
-									</td>
-									<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
-										<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
-											{data.bmi}
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
-										<div className="flex">
-											<a className="group inline-flex space-x-2 truncate text-sm">
-												<p className="truncate text-gray-500 group-hover:text-gray-900">
-													Alcohol intake and consumption
-												</p>
-											</a>
-										</div>
-									</td>
-									<td className="whitespace-nowrap px-6 py-3 text-right text-sm text-gray-500">
-										False
-									</td>
-									<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
-										<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
-											{value(data.drinking)}
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
-										<div className="flex">
-											<a className="group inline-flex space-x-2 truncate text-sm">
-												<p className="truncate text-gray-500 group-hover:text-gray-900">
-													Exercise
-												</p>
-											</a>
-										</div>
-									</td>
-									<td className="whitespace-nowrap px-6 py-3 text-right text-sm text-gray-500">
-										True
-									</td>
-									<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
-										<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
-											{value(data.exercise)}
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
-										<div className="flex">
-											<a className="group inline-flex space-x-2 truncate text-sm">
-												<p className="truncate text-gray-500 group-hover:text-gray-900">
-													Daily junk food average
-												</p>
-											</a>
-										</div>
-									</td>
-									<td className="whitespace-nowrap px-6 py-3 text-right text-sm text-gray-500">
-										0
-									</td>
-									<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
-										<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
-											{data.junk}
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
-										<div className="flex">
-											<a className="group inline-flex space-x-2 truncate text-sm">
-												<p className="truncate text-gray-500 group-hover:text-gray-900">
-													Sleep quality
-												</p>
-											</a>
-										</div>
-									</td>
-									<td className="whitespace-nowrap px-6 py-3 text-right text-sm text-gray-500">
-										Good
-									</td>
-									<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
-										<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
-											{(() => {
-												if (data.sleep === "0") {
-													return "Good"
-												} else if (data.sleep === "1") {
-													return "Moderate"
-												} else if (data.sleep === "2") {
-													return "Bad"
-												}
-											})()}
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td className="whitespace-nowrap px-6 py-3 text-sm text-gray-900">
-										<div className="flex">
-											<a className="group inline-flex space-x-2 truncate text-sm">
-												<p className="truncate text-gray-500 group-hover:text-gray-900">
-													Smoking
-												</p>
-											</a>
-										</div>
-									</td>
-									<td className="whitespace-nowrap px-6 py-3 text-right text-sm text-gray-500">
-										False
-									</td>
-									<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
-										<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
-											{value(data.smoking)}
-										</span>
-									</td>
-								</tr>
+											</div>
+										</td>
+										<td className="whitespace-nowrap px-6 py-3 text-right text-sm text-gray-500">
+											{item.average}
+										</td>
+										<td className="hidden whitespace-nowrap px-6 py-3 text-sm text-gray-500 print:block md:block">
+											<span className="inline-flex items-center rounded-full py-0.5 text-xs font-medium">
+												{item.data}
+											</span>
+										</td>
+									</tr>
+								))}
 							</tbody>
 						</table>
 					</div>

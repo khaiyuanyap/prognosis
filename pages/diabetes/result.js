@@ -1,19 +1,11 @@
 import {useRouter} from "next/router"
 import Head from "next/head"
 import Image from "next/image"
-import {useEffect} from "react"
+import value from "../../lib/boolean"
 
 export default function result() {
 	const router = useRouter()
 	const data = router.query
-
-	function value(boolean) {
-		if (boolean === "0") {
-			return "False"
-		} else {
-			return "True"
-		}
-	}
 
 	const table = [
 		{
