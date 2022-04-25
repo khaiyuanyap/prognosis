@@ -4,7 +4,6 @@ import InputFrame from "../../components/InputFrame"
 import * as tf from "@tensorflow/tfjs"
 import {useRouter} from "next/router"
 import Head from "next/head"
-import {Disclosure, Transition} from "@headlessui/react"
 import Accordion from "../../components/Accordion"
 
 const GetTested = () => {

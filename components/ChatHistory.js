@@ -1,18 +1,10 @@
-import React, { Component } from 'react';
-import ChatMessage from './ChatMessage'
+import React from "react"
+import ChatMessage from "./ChatMessage"
 
-class ChatHistory extends Component {
-  render() {
-    const messages = this.props.messages.map((message, index) =>
-      <ChatMessage key={index} message={message} />
-    );
+export default function ChatHistory(props) {
+	const messages = props.messages.map((message, index) => (
+		<ChatMessage key={index} message={message} />
+	))
 
-    return (
-      <div id="chatHistory">
-        {messages}
-      </div>
-    );
-  }
+	return <div id="chatHistory" className="space-y-2">{messages}</div>
 }
-
-export default ChatHistory;

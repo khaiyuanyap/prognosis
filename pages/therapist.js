@@ -1,73 +1,69 @@
-import React, { Component } from 'react';
-import ElizaBot from '../lib/elizabot';
-import debounce from 'lodash.debounce';
+import React, {useState, useRef, useEffect} from "react"
+import ElizaBot from "../lib/elizabot"
+import ChatHistory from "../components/ChatHistory"
 
-import ChatHistory from '../components/ChatHistory'
-import ChatInput from '../components/ChatInput'
+export default function Therapist() {
+	const [userInput, setUserInput] = useState("")
+	const eliza = new ElizaBot()
 
-class Therapist extends Component {
-  constructor(props) {
-    super(props);
-    this.eliza = new ElizaBot();
-    this.state = {
-      messages: [{
-        user: false,
-        text: this.fixup(this.eliza.getInitial()),
-        date: new Date(),
-      }],
-    };
-    this.debounced_reply = debounce(this.reply, 1000, { 'maxWait': 5000 });
-  }
+	function fixup(text) {
+		return text.replace(/ \?/g, "?")
+	}
 
-  handleInput = (input) => {
-    input = input.trim();
-    if (!input)
-      return;
-    const messages = this.state.messages.slice(0);
-    messages.push({
-      user: true,
-      text: input,
-      date: new Date(),
-    });
-    this.setState({
-      messages,
-    });
-    this.debounced_reply();
-  }
+	const [messages, setMessages] = useState([
+		{
+			user: false,
+			text: fixup(eliza.getInitial()),
+			date: new Date()
+		}
+	])
 
-  reply = () => {
-    const unreplied = [];
-    const messages = this.state.messages.slice(0);
-    let iter = messages.length - 1;
-    while (messages[iter].user && iter >= 0) {
-      unreplied.unshift(messages[iter].text);
-      iter--;
-    }
-    if (unreplied.length === 0)
-      return;
-    let response = this.eliza.transform(unreplied.join(' '));
-    messages.push({
-      user: false,
-      text: this.fixup(response),
-      date: new Date(),
-    });
-    this.setState({
-      messages,
-    });
-  }
+	function handleInput(input) {
+		input = input.trim()
+		if (!input) return
+		setMessages((messages) => [
+			...messages,
+			{
+				user: true,
+				text: fixup(input),
+				date: new Date()
+			}
+		])
+		reply()
+	}
 
-  fixup(text) {
-    return text.replace(/ \?/g, '?');
-  }
+	function reply() {
+		setMessages((messages) => [
+			...messages,
+			{
+				user: false,
+				text: fixup(eliza.transform(userInput)),
+				date: new Date()
+			}
+		])
+	}
 
-  render() {
-    return (
-      <div>
-          <ChatHistory messages={this.state.messages} />
-          <ChatInput inputHandler={this.handleInput} />
-      </div>
-    );
-  }
+	return (
+		<div className="container mx-auto">
+			<div className="max-w-2xl">
+				<div className="relative h-56 overflow-y-auto p-4">
+					<ChatHistory messages={messages} />
+				</div>
+				<div className="sticky w-full">
+					<form
+						onSubmit={(e) => {
+							e.preventDefault()
+							handleInput(userInput)
+							setUserInput("")
+						}}>
+						<input
+							value={userInput}
+							onChange={(e) => setUserInput(e.target.value)}
+							className="w-full rounded-md border bg-transparent py-2 px-4"
+						/>
+					</form>
+				</div>
+			</div>
+		</div>
+	)
 }
-
-export default Therapist;
