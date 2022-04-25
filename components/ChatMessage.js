@@ -23,7 +23,7 @@ class ChatMessage extends Component {
 							hour12: false
 						})}
 					</p>
-					<p>{message.text}</p>
+					<p className="break-all">{message.text}</p>
 				</div>
 				</div>
 			</div>
