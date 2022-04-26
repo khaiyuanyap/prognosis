@@ -11,10 +11,10 @@ class ChatMessage extends Component {
 		}
 
 		return (
-			<div className={className === "murphy" ? "flex justify-start" : "flex justify-end "}>
+			<div className={className === "murphy" ? "flex justify-start" : "flex justify-end"}>
 				<div className="box">
-					<div className={className === "murphy" ? "px-2 py-4 bg-blue-50 border-blue-200 rounded-lg rounded-bl-none border" : "px-2 py-4 bg-white rounded-lg rounded-br-none border"}>
-					<p className="font-semibold text-xs text-gray-500">
+					<div className={className === "murphy" ? "px-2 py-4 rounded-2xl rounded-bl-none bg-gray-100 border" : "px-2 py-4 bg-blue-500 rounded-2xl rounded-br-none text-white"}>
+					<p className="font-semibold text-xs">
 						{author} | Today at{" "}
 						{message.date.toLocaleTimeString("en-US", {
 							hour: "numeric",
@@ -23,7 +23,7 @@ class ChatMessage extends Component {
 							hour12: false
 						})}
 					</p>
-					<p className="break-all">{message.text}</p>
+					<p className="break-words">{message.text}</p>
 				</div>
 				</div>
 			</div>
