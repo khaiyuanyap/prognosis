@@ -200,7 +200,7 @@ export default function result() {
 					</table>
 				</div>
 
-				<div className="mt-4 hidden px-4 print:block md:block">
+				<div className="mt-4 px-4 print:block md:block">
 					<div className="flex items-center">
 						{(() => {
 							if (data.risk == "fit and healthy")
@@ -258,7 +258,7 @@ export default function result() {
 								)
 						})()}
 					</div>
-					<div className="gap-4 md:flex">
+					<div className="gap-4 md:flex visible">
 						{(() => {
 							if (data.risk == "fit and healthy") {
 								return (
