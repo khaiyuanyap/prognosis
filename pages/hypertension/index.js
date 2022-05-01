@@ -105,7 +105,7 @@ export default function hypertension() {
 								method="post">
 								<div className="mb-4 flex items-center space-x-2">
 									<h2 className="text-lg font-semibold">
-									Hypertension | All fields must be filled in without units
+									Hypertension
 									</h2>
 									<svg
 										onClick={() => setIsOpen(true)}
