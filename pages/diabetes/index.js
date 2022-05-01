@@ -131,8 +131,8 @@ export default function home() {
 								method="post">
 								<div className="mb-4 flex items-center space-x-2">
 									<h2 className="text-lg font-semibold">
-										Diabetes checkup | All fields must be filled in without
-										units
+										Diabetes checkup
+										
 									</h2>
 									<svg
 										onClick={() => setIsOpen(true)}
