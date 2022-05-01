@@ -57,7 +57,7 @@ export default function about() {
 							<p className="my-4">
 								Other than that we have a psychiatric chat bot named Murphy who
 								is trained to interact with people suffering from mental
-								distress. Murphy is made with the Rasa Stack NLU library.
+								distress.
 							</p>
 							<p className="my-4">
 								With the open source community we plan to further integrate more

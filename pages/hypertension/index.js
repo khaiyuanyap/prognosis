@@ -3,6 +3,7 @@ import {Input} from "../../components/Form"
 import {useState} from "react"
 import {useRouter} from "next/router"
 import Radio from "../../components/Radio"
+import Video from "../../components/Video"
 
 export default function hypertension() {
 	const router = useRouter()
@@ -55,6 +56,12 @@ export default function hypertension() {
 		})
 	}
 
+	let [isOpen, setIsOpen] = useState(false)
+
+	function closeModal() {
+		setIsOpen(false)
+	}
+
 	return (
 		<div>
 			<Head>
@@ -63,6 +70,12 @@ export default function hypertension() {
 			</Head>
 
 			<main className="min-h-screen bg-gray-50 px-5 pt-5">
+				<Video
+					src="/static/Hypertension-V1.mov"
+					isOpen={isOpen}
+					closeModal={closeModal}
+				/>
+
 				<div>
 					<button
 						onClick={() => router.push("/")}
@@ -90,9 +103,23 @@ export default function hypertension() {
 								className="space-y-4"
 								onSubmit={(e) => handleSubmit(e)}
 								method="post">
-								<p className="text-lg font-semibold">
+								<div className="mb-4 flex items-center space-x-2">
+									<h2 className="text-lg font-semibold">
 									Hypertension | All fields must be filled in without units
-								</p>
+									</h2>
+									<svg
+										onClick={() => setIsOpen(true)}
+										xmlns="http://www.w3.org/2000/svg"
+										className="h-4 w-4 cursor-pointer"
+										viewBox="0 0 20 20"
+										fill="currentColor">
+										<path
+											fillRule="evenodd"
+											d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+											clipRule="evenodd"
+										/>
+									</svg>
+								</div>
 								<Input
 									type="text"
 									pattern="^[A-Za-z ]+$"

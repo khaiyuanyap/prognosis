@@ -1,8 +1,9 @@
 import Head from "next/head"
 import {Input} from "../../components/Form"
-import {useState} from "react"
+import {Fragment, useState} from "react"
 import {useRouter} from "next/router"
 import Radio from "../../components/Radio"
+import Video from "../../components/Video"
 
 export default function cardiac() {
 	const router = useRouter()
@@ -73,113 +74,138 @@ export default function cardiac() {
 		)
 	}
 
-	return (
-		<div>
-			<Head>
-				<title>Cardiac Health Checkup</title>
-				<link rel="icon" href="/favicon.ico" />
-			</Head>
+	let [isOpen, setIsOpen] = useState(false)
 
-			<main className="min-h-screen bg-gray-50 px-5 pt-5">
-				<div>
-					<button
-						onClick={() => router.push("/")}
-						className="ml-4 mb-4 flex items-center rounded-lg border bg-white px-2 py-1 text-sm font-semibold opacity-80 hover:opacity-60 print:hidden">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							className="mr-2 h-4 w-4"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="currentColor"
-							strokeWidth={2}>
-							<path
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								d="M7 16l-4-4m0 0l4-4m-4 4h18"
-							/>
-						</svg>
-						Go Back
-					</button>
-				</div>
-				<div className="relative flex min-h-screen flex-col justify-center bg-gray-50">
-					<div className="relative px-6 pt-10 pb-10">
-						<div className="max-w-lg md:mx-auto">
-							<form
-								className="space-y-4"
-								onSubmit={(e) => handleSubmit(e)}
-								method="post">
-								<p className="text-lg font-semibold">
-									Cardiac checkup | All fields must be filled in without units
-								</p>
-								<Input
-									type="text"
-									pattern="^[A-Za-z ]+$"
-									onChange={(e) => setName(e.target.value)}
-									placeholder={"Please provide your name"}
-									className="flex h-10 w-full items-center rounded-md border-2 border-gray-200 px-4"
+	function closeModal() {
+		setIsOpen(false)
+	}
+
+	return (
+		<>
+			<Video src="/static/Cardiac-V1.mov" isOpen={isOpen} closeModal={closeModal} />
+
+			<div>
+				<Head>
+					<title>Cardiac Health Checkup</title>
+					<link rel="icon" href="/favicon.ico" />
+				</Head>
+
+				<main className="min-h-screen bg-gray-50 px-5 pt-5">
+					<div>
+						<button
+							onClick={() => router.push("/")}
+							className="ml-4 mb-4 flex items-center rounded-lg border bg-white px-2 py-1 text-sm font-semibold opacity-80 hover:opacity-60 print:hidden">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								className="mr-2 h-4 w-4"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+								strokeWidth={2}>
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									d="M7 16l-4-4m0 0l4-4m-4 4h18"
 								/>
-								<Input
-									type="number"
-									min="0"
-									onChange={(e) => setAge(e.target.value)}
-									placeholder={"Your age relative to birth date"}
-									className="flex h-10 w-full items-center rounded-md border-2 border-gray-200 px-4"
-								/>
-								<Biologicalsex />
-								<Chestpain />
-								<Input
-									type="number"
-									min="0"
-									onChange={(e) => setTrestBps(e.target.value)}
-									placeholder={"Resting blood pressure (mm Hg)"}
-									className="flex h-10 w-full items-center rounded-md border-2 border-gray-200 px-4"
-								/>
-								<Input
-									type="number"
-									min="0"
-									onChange={(e) => setChol(e.target.value)}
-									placeholder={"Serum cholestoral (mg/dl)"}
-									className="flex h-10 w-full items-center rounded-md border-2 border-gray-200 px-4"
-								/>
-								<Bloodsugar />
-								<ECGresult />
-								<Input
-									type="number"
-									min="0"
-									onChange={(e) => setThalach(e.target.value)}
-									placeholder={"Maximum heart rate achieved (BPM)"}
-									className="flex h-10 w-full items-center rounded-md border-2 border-gray-200 px-4"
-								/>
-								<Exangexercise />
-								<div className="mt-2 select-none">
-									<label className="font-semibold">
-										Exercising ST Depression
-									</label>
-									<input
-										type="range"
-										step="0.01"
-										min="0"
-										max="10"
-										className="range"
-										onChange={(e) => setOldpeak(e.target.value)}
-										value={oldpeak}
+							</svg>
+							Go Back
+						</button>
+					</div>
+					<div className="relative flex min-h-screen flex-col justify-center bg-gray-50">
+						<div className="relative px-6 pt-10 pb-10">
+							<div className="max-w-lg md:mx-auto">
+								<form
+									className="space-y-4"
+									onSubmit={(e) => handleSubmit(e)}
+									method="post">
+									<div className="mb-4 flex items-center space-x-2">
+										<h2 className="text-lg font-semibold">
+											Cardiac checkup | All fields must be filled in without
+											units
+										</h2>
+										<svg
+											onClick={() => setIsOpen(true)}
+											xmlns="http://www.w3.org/2000/svg"
+											className="h-4 w-4 cursor-pointer"
+											viewBox="0 0 20 20"
+											fill="currentColor">
+											<path
+												fillRule="evenodd"
+												d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+												clipRule="evenodd"
+											/>
+										</svg>
+									</div>
+									<Input
+										type="text"
+										pattern="^[A-Za-z ]+$"
+										onChange={(e) => setName(e.target.value)}
+										placeholder={"Please provide your name"}
+										className="flex h-10 w-full items-center rounded-md border-2 border-gray-200 px-4"
 									/>
-									{oldpeak}
-								</div>
-								<Anginaslope />
-								<Coloredvessel />
-								<Thalassemia />
-								<button
-									type="submit"
-									className="rounded-md border-2 border-green-500 bg-white px-3 py-1 font-semibold tracking-wide hover:opacity-80">
-									Predict
-								</button>
-							</form>
+									<Input
+										type="number"
+										min="0"
+										onChange={(e) => setAge(e.target.value)}
+										placeholder={"Your age relative to birth date"}
+										className="flex h-10 w-full items-center rounded-md border-2 border-gray-200 px-4"
+									/>
+									<Biologicalsex />
+									<Chestpain />
+									<Input
+										type="number"
+										min="0"
+										onChange={(e) => setTrestBps(e.target.value)}
+										placeholder={"Resting blood pressure (mm Hg)"}
+										className="flex h-10 w-full items-center rounded-md border-2 border-gray-200 px-4"
+									/>
+									<Input
+										type="number"
+										min="0"
+										onChange={(e) => setChol(e.target.value)}
+										placeholder={"Serum cholestoral (mg/dl)"}
+										className="flex h-10 w-full items-center rounded-md border-2 border-gray-200 px-4"
+									/>
+									<Bloodsugar />
+									<ECGresult />
+									<Input
+										type="number"
+										min="0"
+										onChange={(e) => setThalach(e.target.value)}
+										placeholder={"Maximum heart rate achieved (BPM)"}
+										className="flex h-10 w-full items-center rounded-md border-2 border-gray-200 px-4"
+									/>
+									<Exangexercise />
+									<div className="mt-2 select-none">
+										<label className="font-semibold">
+											Exercising ST Depression
+										</label>
+										<input
+											type="range"
+											step="0.01"
+											min="0"
+											max="10"
+											className="range"
+											onChange={(e) => setOldpeak(e.target.value)}
+											value={oldpeak}
+										/>
+										{oldpeak}
+									</div>
+									<Anginaslope />
+									<Coloredvessel />
+									<Thalassemia />
+									<button
+										type="submit"
+										className="rounded-md border-2 border-green-500 bg-white px-3 py-1 font-semibold tracking-wide hover:opacity-80">
+										Predict
+									</button>
+								</form>
+							</div>
 						</div>
 					</div>
-				</div>
-			</main>
-		</div>
+				</main>
+			</div>
+		</>
 	)
 
 	function Thalassemia() {

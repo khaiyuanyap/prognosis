@@ -7,6 +7,10 @@ module.exports = withPWA({
 			{
 				source: "/api/:path*",
 				destination: "http://khaichuen.pythonanywhere.com/:path*"
+			},
+			{
+				source: "/static/:path*",
+				destination: "http://yapkhaichuen.pythonanywhere.com/static/:path*"
 			}
 		]
 	},

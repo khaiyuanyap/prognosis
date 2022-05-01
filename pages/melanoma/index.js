@@ -1,10 +1,13 @@
 import React, {useEffect} from "react"
-import {useState} from "react"
 import InputFrame from "../../components/InputFrame"
 import * as tf from "@tensorflow/tfjs"
-import {useRouter} from "next/router"
+import {Fragment, useState} from "react"
 import Head from "next/head"
 import Accordion from "../../components/Accordion"
+import {Player} from "react-tuby"
+import {Dialog, Transition} from "@headlessui/react"
+import {useRouter} from "next/router"
+import Video from "../../components/Video"
 
 const GetTested = () => {
 	const [isLoading, setLoading] = useState(true)
@@ -14,6 +17,12 @@ const GetTested = () => {
 	const loadModel = async () => {
 		const mod = await tf.loadLayersModel("./model/model.json")
 		setModel(mod)
+	}
+
+	let [isOpen, setIsOpen] = useState(false)
+
+	function closeModal() {
+		setIsOpen(false)
 	}
 
 	useEffect(() => {
@@ -27,6 +36,8 @@ const GetTested = () => {
 			<Head>
 				<title>Skin Cancer</title>
 			</Head>
+			<Video src="/static/Skin-V1.mov" isOpen={isOpen} closeModal={closeModal}/>
+
 			<main className="min-h-screen bg-gray-50 px-5 pt-5">
 				<div>
 					<button
@@ -56,7 +67,7 @@ const GetTested = () => {
 							</div>
 						</div>
 					) : (
-						<InputFrame model={model} />
+						<InputFrame model={model} setIsOpen={setIsOpen} />
 					)}
 				</div>
 				<div>
