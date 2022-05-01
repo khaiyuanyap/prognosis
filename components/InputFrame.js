@@ -3,7 +3,7 @@ import {useState} from "react"
 import {useRef} from "react"
 import {predict} from "./modelLogic"
 
-const InputFrame = ({model}) => {
+const InputFrame = ({model, setIsOpen}) => {
 	let selectedImgRef = useRef(null)
 
 	const [error, setError] = useState(null)
@@ -38,10 +38,22 @@ const InputFrame = ({model}) => {
 			<div className="relative px-6 pt-10 pb-10">
 				<div className="max-w-lg md:mx-auto">
 					<div>
-						<div>
-							<h2 className="mb-4 text-lg font-semibold">
+						<div className="mb-4 flex items-center space-x-2">
+							<h2 className="text-lg font-semibold">
 								Get Tested For Skin Cancer
 							</h2>
+							<svg
+								onClick={() => setIsOpen(true)}
+								xmlns="http://www.w3.org/2000/svg"
+								className="h-4 w-4 cursor-pointer"
+								viewBox="0 0 20 20"
+								fill="currentColor">
+								<path
+									fillRule="evenodd"
+									d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+									clipRule="evenodd"
+								/>
+							</svg>
 						</div>
 						{imgFileUrl !== "" && (
 							<div>
