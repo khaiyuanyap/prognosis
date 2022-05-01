@@ -120,8 +120,7 @@ export default function cardiac() {
 									method="post">
 									<div className="mb-4 flex items-center space-x-2">
 										<h2 className="text-lg font-semibold">
-											Cardiac checkup | All fields must be filled in without
-											units
+											Cardiac checkup 		
 										</h2>
 										<svg
 											onClick={() => setIsOpen(true)}
