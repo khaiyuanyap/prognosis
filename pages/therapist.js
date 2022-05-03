@@ -1,5 +1,5 @@
 import React, {useState, useRef, useEffect} from "react"
-import ElizaBot from "../lib/murphybot"
+import MurphyBot from "../lib/murphybot"
 import ChatHistory from "../components/ChatHistory"
 import {useRouter} from "next/router"
 import ScrollableFeed from "react-scrollable-feed"
@@ -8,7 +8,7 @@ import Head from "next/head"
 export default function Therapist() {
 	const router = useRouter()
 	const [userInput, setUserInput] = useState("")
-	const eliza = new ElizaBot()
+	const eliza = new MurphyBot()
 
 	function fixup(text) {
 		return text.replace(/ \?/g, "?")
