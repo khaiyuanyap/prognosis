@@ -28,6 +28,7 @@ Current available healthcare tools and features are:
 ### **ML-Medical API**
 [ML-Medical](https://github.com/yapkhaichuen/ml-medical) is our Flask API made to process incoming API request for medical data to return machine learning predictions. Currently powering the [Prognosis](https://prognosis.vercel.app/) web framework. However this is not medical advise and can only be used for self testing purposes, please consult a doctor for further information.
 
+### **Video**
 [![Check out our video](./public/Main.png)](https://www.youtube.com/watch?v=mlIndNzzydI&t=1s)
 
 
