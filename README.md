@@ -16,4 +16,4 @@
 
 ### **Prognosis**
 
-Prognosis is a web application that predicts a person's risk of getting diseases with machine learning. Frontend made with React JavaScript and Tensorflow.js, backend powered by Python alongside machine learning frameworks such as Sci-Kit Learn. Subtitles are available on this video. 
+Prognosis is a web application that predicts a person's risk of getting diseases with machine learning. Frontend made with React JavaScript and Tensorflow.js, backend powered by Python alongside machine learning frameworks such as Sci-Kit Learn.
