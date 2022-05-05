@@ -1,6 +1,6 @@
 <p align="center">
   <a href="prognosis.vercel.app">
-    <img src="https://raw.githubusercontent.com/YuanYap/prognosis/main/public/images/about.png" width="100">
+    <img src="./public/export.png" width="100">
   </a>
 
   <p align="center">
