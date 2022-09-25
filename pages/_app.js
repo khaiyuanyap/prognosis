@@ -1,5 +1,6 @@
 import "../styles/globals.css"
 import "react-tuby/css/main.css";
+import "@fontsource/inter/variable.css"
 import Head from "next/head"
 
 function MyApp({Component, pageProps}) {
