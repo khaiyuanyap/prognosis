@@ -4,6 +4,7 @@ import {useState} from "react"
 import {useRouter} from "next/router"
 import Radio from "../../components/Radio"
 import Video from "../../components/Video"
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function hypertension() {
 	const router = useRouter()
@@ -19,6 +20,7 @@ export default function hypertension() {
 
 	async function handleSubmit(e) {
 		e.preventDefault()
+		toast.loading('Loading...')
 		const res = await fetch("/api/hypertension", {
 			method: "POST",
 			headers: {
@@ -38,6 +40,7 @@ export default function hypertension() {
 		const data = await res.json()
 		const risk = data.risk
 		const prediction_probability = data.prediction_probability
+		toast.dismiss()
 		router.push({
 			pathname: "/hypertension/result",
 			query: {

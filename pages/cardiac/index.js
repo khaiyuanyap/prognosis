@@ -4,6 +4,7 @@ import {Fragment, useState} from "react"
 import {useRouter} from "next/router"
 import Radio from "../../components/Radio"
 import Video from "../../components/Video"
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function cardiac() {
 	const router = useRouter()
@@ -24,6 +25,7 @@ export default function cardiac() {
 
 	async function handleSubmit(e) {
 		e.preventDefault()
+		toast.loading('Loading...')
 		const res = await fetch("/api/cardiac", {
 			method: "POST",
 			headers: {
@@ -48,6 +50,7 @@ export default function cardiac() {
 		const data = await res.json()
 		const risk = data.risk
 		const prediction_probability = data.prediction_probability
+		toast.dismiss()
 		router.push(
 			{
 				pathname: "/cardiac/result",
@@ -83,8 +86,9 @@ export default function cardiac() {
 	return (
 		<>
 			<Video src="/static/Cardiac-V1.mov" isOpen={isOpen} closeModal={closeModal} />
+			<Toaster />
 
-			<div>
+			<div>	
 				<Head>
 					<title>Cardiac Health Checkup</title>
 					<link rel="icon" href="/favicon.ico" />

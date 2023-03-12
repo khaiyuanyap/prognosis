@@ -1,9 +1,9 @@
 import React from "react"
-import {useState} from "react"
-import {useRef} from "react"
-import {predict} from "./modelLogic"
+import { useState } from "react"
+import { useRef } from "react"
+import { predict } from "./modelLogic"
 
-const InputFrame = ({model, setIsOpen}) => {
+const InputFrame = ({ model, setIsOpen }) => {
 	let selectedImgRef = useRef(null)
 
 	const [error, setError] = useState(null)
@@ -12,7 +12,7 @@ const InputFrame = ({model, setIsOpen}) => {
 	const [prediction, setPrediction] = useState([])
 
 	const onFileChange = (e) => {
-		const {files} = e.target
+		const { files } = e.target
 
 		if (!files[0].type.startsWith("image/")) {
 			setError("Only 'jpeg/png' format images")
@@ -110,7 +110,18 @@ const InputFrame = ({model, setIsOpen}) => {
 																			{pred?.className}
 																		</td>
 																		<td className="whitespace-nowrap px-3 py-1 text-right text-sm font-semibold text-gray-500">
-																			{(pred?.probability * 100).toFixed(2)}%
+
+																			{pred?.probability * 100 < 50 && (
+																				<>Low Risk</>
+																			)}
+																			{pred?.probability * 100 >= 50 &&
+																				pred?.probability * 100 < 60 && (
+																					<>Moderate Risk</>
+																				)}
+																			{pred?.probability * 100 >= 60 && (
+																				<>High Risk</>
+																			)}
+
 																		</td>
 																	</tr>
 																))}

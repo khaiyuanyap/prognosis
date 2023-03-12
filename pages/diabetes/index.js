@@ -4,6 +4,7 @@ import {useState} from "react"
 import {useRouter} from "next/router"
 import Radio from "../../components/Radio"
 import Video from "../../components/Video"
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function home() {
 	const router = useRouter()
@@ -27,6 +28,7 @@ export default function home() {
 
 	async function handleSubmit(e) {
 		e.preventDefault()
+		toast.loading('Loading...')
 		const res = await fetch("/api/diabetes", {
 			method: "POST",
 			headers: {
@@ -53,6 +55,7 @@ export default function home() {
 		})
 		const data = await res.json()
 		const risk = data.risk
+		toast.dismiss()
 		router.push(
 			{
 				pathname: "/diabetes/result",
