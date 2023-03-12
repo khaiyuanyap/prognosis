@@ -1,7 +1,7 @@
 const withPWA = require("next-pwa")
 const runtimeCaching = require("next-pwa/cache")
 
-module.exports = withPWA({
+module.exports = ({
 	async rewrites() {
 		return [
 			{
@@ -19,5 +19,4 @@ module.exports = withPWA({
 		runtimeCaching,
 		disable: process.env.NODE_ENV === "development"
 	},
-	swcMinify: true,
 })
