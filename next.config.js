@@ -1,16 +1,12 @@
 const withPWA = require("next-pwa")
 const runtimeCaching = require("next-pwa/cache")
 
-module.exports = ({
+module.exports = withPWA({
 	async rewrites() {
 		return [
 			{
 				source: "/api/:path*",
 				destination: "http://khaichuen.pythonanywhere.com/:path*"
-			},
-			{
-				source: "/static/:path*",
-				destination: "http://yapkhaichuen.pythonanywhere.com/static/:path*"
 			}
 		]
 	},

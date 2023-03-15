@@ -85,7 +85,7 @@ export default function cardiac() {
 
 	return (
 		<>
-			<Video src="/static/Cardiac-V1.mov" isOpen={isOpen} closeModal={closeModal} />
+			<Video src="/prognosisvideothings/Cardiac-V1.mov" isOpen={isOpen} closeModal={closeModal} />
 			<Toaster />
 
 			<div>	

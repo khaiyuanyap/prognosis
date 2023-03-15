@@ -124,7 +124,7 @@ export default function home() {
 					<div className="relative px-6 pt-10 pb-10">
 						<div className="max-w-lg md:mx-auto">
 							<Video
-								src="/static/Diabetes-V1.mov"
+								src="/prognosisvideothings/Diabetes-V1.mov"
 								isOpen={isOpen}
 								closeModal={closeModal}
 							/>

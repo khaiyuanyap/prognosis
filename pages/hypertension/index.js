@@ -75,7 +75,7 @@ export default function hypertension() {
 
 			<main className="min-h-screen bg-gray-50 px-5 pt-5">
 				<Video
-					src="/static/Hypertension-V1.mov"
+					src="/prognosisvideothings/Hypertension-V1.mov"
 					isOpen={isOpen}
 					closeModal={closeModal}
 				/>

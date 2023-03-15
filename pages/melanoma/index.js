@@ -36,7 +36,7 @@ const GetTested = () => {
 			<Head>
 				<title>Skin Cancer</title>
 			</Head>
-			<Video src="/static/Skin-V1.mov" isOpen={isOpen} closeModal={closeModal}/>
+			<Video src="/prognosisvideothings/Skin-V1.mp4" isOpen={isOpen} closeModal={closeModal}/>
 
 			<main className="min-h-screen bg-gray-50 px-5 pt-5">
 				<div>
