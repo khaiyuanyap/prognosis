@@ -93,6 +93,7 @@ export default function home() {
 
 	return (
 		<div>
+			<Toaster />
 			<Head>
 				<title>Diabetes Checkup</title>
 				<link rel="icon" href="/favicon.ico" />

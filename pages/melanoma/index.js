@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"
+import React, {use, useEffect} from "react"
 import InputFrame from "../../components/InputFrame"
 import * as tf from "@tensorflow/tfjs"
 import {Fragment, useState} from "react"
@@ -60,13 +60,7 @@ const GetTested = () => {
 					</button>
 				</div>
 				<div>
-					{isLoading ? (
-						<div className="relative flex flex-col justify-center ">
-							<div className="relative px-6 pt-10 pb-10">
-								<div className="max-w-lg md:mx-auto">Loading</div>
-							</div>
-						</div>
-					) : (
+					{!isLoading && (
 						<InputFrame model={model} setIsOpen={setIsOpen} />
 					)}
 				</div>

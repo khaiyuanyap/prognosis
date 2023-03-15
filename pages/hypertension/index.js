@@ -67,6 +67,7 @@ export default function hypertension() {
 
 	return (
 		<div>
+			<Toaster />
 			<Head>
 				<title>Cardiac Health Checkup</title>
 				<link rel="icon" href="/favicon.ico" />
