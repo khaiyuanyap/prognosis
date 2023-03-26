@@ -25,6 +25,7 @@ const InputFrame = ({ model, setIsOpen }) => {
 	// Handle predict
 
 	const handlePredict = (e) => {
+		toast.loading("Loading...")
 		setPredLoading(true)
 		predict(selectedImgRef, model).then((top3) => {
 			setTimeout(() => {
@@ -70,7 +71,7 @@ const InputFrame = ({ model, setIsOpen }) => {
 										/>
 									</div>
 									<div>
-										{predLoading && (
+										{
 											prediction.length !== 0 && (
 												<div className="my-2">
 													<div>
@@ -113,7 +114,7 @@ const InputFrame = ({ model, setIsOpen }) => {
 													</div>
 												</div>
 											)
-										)}
+										}
 									</div>
 								</div>
 							)}
@@ -134,10 +135,7 @@ const InputFrame = ({ model, setIsOpen }) => {
 												<button
 													className="order-last block w-full basis-1/2 cursor-pointer rounded-md border-2 border-green-500 bg-white px-3 py-1 font-semibold tracking-wide hover:opacity-80"
 													onClick={
-														() => {
-															toast.loading("Loading...")
-															handlePredict()
-														}
+															handlePredict
 													}>
 													Predict
 												</button>
