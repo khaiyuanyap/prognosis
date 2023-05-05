@@ -323,9 +323,10 @@ export default function result() {
 													Emergency
 												</h1>
 												<p>
-													You might have high blood sugar. Consult a doctor
-													immediately. If you’re facing immediate discomfort,
-													contact emergency services as soon as possible.
+													Everything is going to be OK, try to always look at
+													the bright sight of things. Think rationally and know
+													that there are people who will always care and support
+													you.
 												</p>
 											</div>
 										</div>
@@ -337,11 +338,11 @@ export default function result() {
 										<div className="mt-4 w-full rounded-lg border-2 bg-white md:w-1/2">
 											<div className="p-4">
 												<h1 className="text-lg font-semibold capitalize">
-													{data.risk}
+													high risk of hypertension
 												</h1>
 												<p>
 													Exercising and eating healthy is important to maintain
-													healthy blood sugar content.
+													healthy blood sodium content.
 												</p>
 											</div>
 										</div>
