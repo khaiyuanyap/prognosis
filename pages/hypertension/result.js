@@ -225,7 +225,6 @@ export default function result() {
 											<p className="text-md ml-4 font-semibold capitalize">
 												{" "}
 {data.risk == "fit and healthy" ? data.risk : "high risk of hypertension"}
-												{data.risk}{" "}
 												{(data.prediction_probability * 100).toFixed(2)}%
 											</p>
 										</div>
